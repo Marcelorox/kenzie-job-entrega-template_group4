@@ -52,9 +52,12 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
             console.log(error);
         }
     }
+    const value = {
+        admin
+    }
 
     return(
-        <AdminContext.Provider value={{}}>
+        <AdminContext.Provider value={value}>
             {children}
         </AdminContext.Provider>
     )
