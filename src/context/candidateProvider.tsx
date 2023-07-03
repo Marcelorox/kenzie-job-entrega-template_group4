@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useState, useEffect } from "react";
 import { api } from "../api/api";
+import { NavigateFunction, useNavigate } from "react-router-dom";
 
 export interface Job {
   userId: number;
@@ -11,6 +12,7 @@ export interface Job {
 
 interface UserContextProps {
   jobs: Job[] | null;
+  navigate: NavigateFunction;
 }
 
 export const UserContext = createContext<UserContextProps>(
@@ -19,6 +21,7 @@ export const UserContext = createContext<UserContextProps>(
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
   const [jobs, setJobs] = useState<Job[] | null>(null);
+  const navigate = useNavigate();
 
   const fetchJobs = async () => {
     try {
@@ -38,7 +41,8 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   const value: UserContextProps = {
-    jobs
+    jobs,
+    navigate
   };
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
