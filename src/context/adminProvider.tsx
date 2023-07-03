@@ -6,8 +6,6 @@ interface IAdminProviderProps{
     children: React.ReactNode;
 }
 
-
-
 export const AdminProvider = ({children}: IAdminProviderProps) => {
     return(
         <AdminContext.Provider value={{}}>
