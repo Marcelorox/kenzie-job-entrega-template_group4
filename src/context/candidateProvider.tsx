@@ -1,0 +1,7 @@
+ function CandidateContext () {
+
+    return(
+        null
+    )
+
+}
