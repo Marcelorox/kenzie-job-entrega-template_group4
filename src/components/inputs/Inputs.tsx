@@ -1,17 +1,18 @@
-import { HTMLAttributes } from "react";
+import { HTMLAttributes, forwardRef, ForwardedRef } from "react";
 
 interface IPropsInput extends HTMLAttributes<HTMLInputElement>{
     type: string;
-    label: string;
-    error: any
+    label?: string;
+    error: any;
+
 }
 
-export const Input (label, placeholder, error  ) : IPropsInput =>{
+export const Input = forwardRef(({ error, type, label, ...rest}: IPropsInput , ref: ForwardedRef<HTMLInputElement>)  =>{
     return(
         <>
-            {label? <label htmlFor="input"> {label} </label> : null}
-            <input type={type} placeholder={placeholder}  />
+            {label? <label> {label} </label>: null}
+            <input type={type} ref={ref} {...rest} />
             {error? <p>{error.message}</p>: null }
         </>
     )
-}
+})
