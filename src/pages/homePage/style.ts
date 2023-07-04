@@ -2,15 +2,110 @@ import styled from "styled-components";
 
 export const Styledsection = styled.section`
   width: 100%;
-  height: 100%;
-  min-height: 3.625rem;
-  padding: 1rem;
+  min-height: 100vh;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
 
-  .homeJobs_caixa{
-    height: 253px;
-    background:#8490FF;
-}
+  .homeJobs_caixa {
+    height: 180px;
+    background: #8490ff;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .homeJobs_fraseInicial {
+    width: 100%;
+    max-width: 1328px;
+  }
+
+  h1 {
+    font-family: var(--Font-primary);
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 4.875rem;
+    color: white;
+  }
+
+  .homeJobs_aboutUs {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .homeJobs_aboutUsConatainner {
+    width: 100%;
+    max-width: 1328px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    h1 {
+      color: #8490ff;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .homeJobs_aboutUsTitle {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .homeJobs_listaDeVagas {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      color: #8490ff;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .homeJobs_listaDeVagas--Containner {
+    width: 100%;
+    max-width:1104px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      color: #8490ff;
+      align-self: center;
+      margin-bottom: 1rem;
+    }
+  }
+
+  img {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  @media (min-width: 600px) {
+    h1 {
+      font-size: 4rem;
+      line-height: 4.875rem;
+    }
+  }
+
+  @media (min-width: 1300px) {
+    .homeJobs_aboutUsConatainner {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
 `;

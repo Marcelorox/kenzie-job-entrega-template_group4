@@ -19,19 +19,19 @@ export const StyledFooter = styled.footer`
     flex-wrap: wrap;
   }
 
-  h4 {
-    color: var(--blue);
-    font-size: 3rem;
-  }
   p {
     color: white;
   }
+
 
   @media (min-width: 600px) {
     
   .footer_containner {
     justify-content: space-between;
     flex-direction: row;
+    }
+    div{
+
     }
   }
 `;
