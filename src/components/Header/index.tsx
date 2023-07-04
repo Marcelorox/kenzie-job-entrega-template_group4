@@ -1,5 +1,5 @@
 import SearchIcon from "@mui/icons-material/Search";
-import { StyledHeader } from "./style";
+import { StyledHeader } from "./style.ts";
 import { StyledMenu } from "../../style/typography";
 
 export function Header() {
