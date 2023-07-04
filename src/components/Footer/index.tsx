@@ -1,4 +1,4 @@
-import { StyledFooter } from "./style";
+import { StyledFooter } from "./style.ts";
 import { StyledParagraph } from "../../style/typography";
 
 export function Footer() {
