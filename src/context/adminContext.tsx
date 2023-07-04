@@ -61,6 +61,7 @@ interface AdminContextProps {
     navigate: NavigateFunction,
     companyRegister: (formData: IAdminRegister) => void,  
     companyLogin: (formData: IAdminLogin) => void,
+    handleLogout: () => void,
 }
 
 export const AdminContext = createContext<AdminContextProps>(
@@ -115,12 +116,10 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
         } catch (error) {
             console.log(error)
         }
-
         if(token && userId) {
             listComapnyCandidates()
         }
     }
-
     const handleLogout = () => {
         localStorage.removeItem("@TOKEN")
         localStorage.removeItem("@USERID")
@@ -136,6 +135,7 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
         navigate,
         companyRegister,
         companyLogin,
+        handleLogout
     }
     
     return(
@@ -143,3 +143,4 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
             {children}
         </AdminContext.Provider>
     )
+}
