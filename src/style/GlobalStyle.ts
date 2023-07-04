@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     --lightblue: #F9F9FF;
     --blue: #8490FF;
 
-    --size-title1: 4rem;
+    --size-title1: clamp(30px, 10vw, 4rem);
     --size-title2: 2.75rem;
     --size-title3: 1.3125rem;
 
@@ -26,6 +26,10 @@ export const GlobalStyle = createGlobalStyle`
     --weight-bold: 700;
 
     --Font-primary:'Inter', sans-serif;
+
+    body{
+        font-family: var(--Font-primary);
+    }  
 
     h1{
         font-size: var(--size-title1);
@@ -56,6 +60,15 @@ export const GlobalStyle = createGlobalStyle`
     input{
         background-color: transparent;
         border: none;
+    }
+
+    a{
+        cursor: pointer;
+        text-decoration: none
+    }
+
+    ul{
+        list-style: none;
     }
 
 }
