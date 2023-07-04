@@ -25,6 +25,8 @@ export const GlobalStyle = createGlobalStyle`
 
     --weight-bold: 700;
 
+    --Font-primary:'Inter', sans-serif;
+
     h1{
         font-size: var(--size-title1);
     }

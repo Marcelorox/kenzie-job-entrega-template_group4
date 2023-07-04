@@ -1,9 +1,13 @@
-import { GlobalStyle } from "./style/GlobalStyle"
+import { HomePage } from "./pages/homePage";
+import { GlobalStyle } from "./style/globalStyle";
 
-function App () {
-  return(
-    <GlobalStyle />
-  )
+function App() {
+  return (
+    <>
+      <GlobalStyle />
+      <HomePage />
+    </>
+  );
 }
 
-export default App
+export default App;
