@@ -17,9 +17,9 @@ export const FormRegister = () =>{
         <form onSubmit={handleSubmit(registerUserSubmit)}>
             <Input type="text" placeholder="Nome da emresa" error={errors.name} {...register("name")} />
             <Input type="text" placeholder="E-mail" error={errors.email} {...register("email")}/>
-            <Input type="text" placeholder="Senha" error={errors.assword} {...register("password")}/>
+            <Input type="text" placeholder="Senha" error={errors.password} {...register("password")}/>
             <Input type="text" placeholder="Confirmar senha" error={errors.confirm_password} {...register("confirm_password")}/>
-            <button type="submit"></button>
+            <button type="submit">Cadastra-se</button>
         </form>
     )
 }
