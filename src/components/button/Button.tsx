@@ -1,13 +1,13 @@
+import { ButtonHTMLAttributes } from "react";
 import { StyleButton } from "./StyleButton"
 
- interface IButtonPros{
+ interface IButtonPros extends ButtonHTMLAttributes<HTMLButtonElement>{
     text: string;
-    type: string;
  }
 
-export const Button = ({ text, type }: IButtonPros) =>{
+export const Button = ({ text, ...rest }: IButtonPros) =>{
     return(
-        <StyleButton type={type}>
+        <StyleButton {...rest}>
             {text}
         </StyleButton>
     )

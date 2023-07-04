@@ -15,7 +15,7 @@ export const StyledHeader = styled.header`
     height: 84px;
   }
 
-  h1 {
+  h4 {
     color: var(--blue);
     font-size: 3rem;
     position: absolute;
@@ -38,7 +38,7 @@ export const StyledHeader = styled.header`
     right: 50%;
   }
 
-  button {
+  .headerButton{
     display: none;
   }
 
@@ -47,15 +47,19 @@ export const StyledHeader = styled.header`
       height: 55px;
     }
 
-    button {
+    .headerButton{
       display: block;
       height: 55px;
       position: absolute;
       top: 0;
       right: 70px;
       display: block;
+      padding-right: 1rem;
+      padding-left: 1rem;
       background-color: var(--blue);
       color: white;
+      border: 1px solid var(--blue);
+      border-radius: 40px;
     }
 
     .span_containner {
@@ -63,7 +67,7 @@ export const StyledHeader = styled.header`
       height: 55px;
       position: absolute;
       top: 0;
-      right: 250px;
+      right: 270px;
     }
     span {
       position: absolute;

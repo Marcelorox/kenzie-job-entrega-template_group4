@@ -27,29 +27,7 @@ export const GlobalStyle = createGlobalStyle`
 
     --Font-primary:'Inter', sans-serif;
 
-    body{
-        font-family: var(--Font-primary);
-    }  
 
-    h1{
-        font-size: var(--size-title1);
-    }
-
-    h2{
-        font-size: var(--size-title2);
-    }
-
-    h3{
-        font-size: var(--size-title3);
-    }
-
-    p, span{
-        font-size: var(--size-paragraph);
-    }
-
-    label{
-        font-size: var(--size-label);
-    }
 
     button{
         cursor: pointer;

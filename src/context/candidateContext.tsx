@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useState, useEffect } from "react";
 import { api } from "../api/api";
-import { NavigateFunction, useNavigate } from "react-router-dom";
+import { NavigateFunction } from "react-router-dom";
 import { AxiosResponse } from "axios";
 
 interface JobResponse extends AxiosResponse {
@@ -33,7 +33,7 @@ interface ApplicationsResponse extends AxiosResponse {
 
 interface UserContextProps {
   jobs: Job | null;
-  navigate: NavigateFunction;
+  // navigate: NavigateFunction;
   fetchApplications: (formData: ApplicationsResponse) => void;
 }
 
@@ -43,7 +43,11 @@ export const UserContext = createContext<UserContextProps>(
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
   const [jobs, setJobs] = useState<Job | null>(null);
+<<<<<<< HEAD
  // const navigate = useNavigate();
+=======
+  // const navigate = useNavigate();
+>>>>>>> caa270810257629053b8953b342b3c2636f5b372
 
   const fetchJobs = async () => {
     try {
@@ -70,8 +74,12 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
 
   const value: UserContextProps = {
     jobs,
+<<<<<<< HEAD
    // navigate,
     fetchApplications,
+=======
+    fetchApplications
+>>>>>>> caa270810257629053b8953b342b3c2636f5b372
   };
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
