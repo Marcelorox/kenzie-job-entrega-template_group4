@@ -20,7 +20,9 @@ export const FormRegister = () =>{
             <Input type="email" placeholder="E-mail" error={errors.email} {...register("email")}/>
             <Input type="password" placeholder="Senha" error={errors.password} {...register("password")}/>
             <Input type="password" placeholder="Confirmar senha" error={errors.confirm_password} {...register("confirm_password")}/>
-            <Button text={"Cadastrar-se"} type="submit" />
+            <div className="form_button">
+             <Button text={"Cadastrar-se"} type="submit" />
+            </div>
         </form>
     )
 }

@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     --lightblue: #F9F9FF;
     --blue: #8490FF;
 
-    --size-title1: clamp(30px, 10vw, 4rem);
+    --size-title1: clamp(1.875rem, 10vw, 4rem);
     --size-title2: 2.75rem;
     --size-title3: 1.3125rem;
 
@@ -31,7 +31,6 @@ export const GlobalStyle = createGlobalStyle`
 
     button{
         cursor: pointer;
-        background-color: transparent;
         border: none;
     }
 
@@ -50,4 +49,5 @@ export const GlobalStyle = createGlobalStyle`
     }
 
 }
+
 `

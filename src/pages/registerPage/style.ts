@@ -49,5 +49,31 @@ export const StyleContainerForm =styled.div`
             
             
         }
+
+        .form_button{
+            margin-top: 20px;
+            display: flex;
+            justify-content: flex-end;
+            border: 1px solid red
+            
+
+            button{
+                width: 1000%;
+            }
+        }
+    }
+
+
+    @media (min-width: 600px){
+        .form_button{
+            display: flex;
+            justify-content: flex-end;
+
+            button{
+                width: 10px;
+        
+            }
+        }
+    
     }
 `
