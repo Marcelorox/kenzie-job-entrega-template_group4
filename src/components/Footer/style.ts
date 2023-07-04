@@ -13,17 +13,25 @@ export const StyledFooter = styled.footer`
     width: 100%;
     max-width: 1328px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
   }
 
-  h1 {
+  h4 {
     color: var(--blue);
     font-size: 3rem;
   }
   p {
     color: white;
+  }
+
+  @media (min-width: 600px) {
+    
+  .footer_containner {
+    justify-content: space-between;
+    flex-direction: row;
+    }
   }
 `;

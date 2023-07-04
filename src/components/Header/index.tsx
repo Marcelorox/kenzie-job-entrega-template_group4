@@ -1,17 +1,16 @@
 import SearchIcon from "@mui/icons-material/Search";
 import { StyledHeader } from "./style";
 import { StyledMenu } from "../../style/typography";
-import {StylesButton} from "../../style/button"
 
 export function Header() {
   return (
     <StyledHeader>
       <div className="header_containner">
-        <h1>Jobs</h1>
+        <h4>Jobs</h4>
         <div className="span_containner">
           <StyledMenu>acesso empresa</StyledMenu>
         </div>
-        <button>Confira nossas vagas</button>
+        <button className="headerButton">Confira nossas vagas</button>
         <SearchIcon className="lupa" />
       </div>
     </StyledHeader>

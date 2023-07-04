@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <StyledFooter>
       <div className="footer_containner">
-        <h1>Jobs</h1>
+        <h4>Jobs</h4>
         <StyledParagraph>
           Todos os direitos reservados - Kenzie Academy Brasil
         </StyledParagraph>
