@@ -6,8 +6,6 @@ export const AdminContext = createContext({})
 interface IAdminProviderProps{
     children: React.ReactNode;
 }
-
-
 interface IAdmin{
     email: string,
     name: string,
@@ -61,4 +59,4 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
             {children}
         </AdminContext.Provider>
     )
-}
+}   
