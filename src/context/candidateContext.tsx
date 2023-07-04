@@ -4,7 +4,7 @@ import { NavigateFunction } from "react-router-dom";
 import { AxiosResponse } from "axios";
 
 interface JobResponse extends AxiosResponse {
-  data: Job
+  data: Job[]
 }
 
 interface Job {
@@ -33,7 +33,8 @@ interface ApplicationsResponse extends AxiosResponse{
 }
 
 interface UserContextProps {
-  jobs: Job | null;
+
+  jobs: Job[] | [];
   // navigate: NavigateFunction;
   fetchApplications: (formData: ApplicationsResponse) => void;
 }
@@ -43,14 +44,14 @@ export const UserContext = createContext<UserContextProps>(
 );
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
-  const [jobs, setJobs] = useState<Job | null>(null);
+
+  const [jobs, setJobs] = useState<Job[] | []>([]);
   // const navigate = useNavigate();
 
   const fetchJobs = async () => {
     try {
       const {data} : JobResponse = await api.get("jobs");
-      const jobsData: Job = data;
-      setJobs(jobsData);
+      setJobs(data)
     } catch (error) {
       console.log(error);
     }
@@ -70,6 +71,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
 
   const value: UserContextProps = {
     jobs,
+    // navigate,
     fetchApplications
   };
 

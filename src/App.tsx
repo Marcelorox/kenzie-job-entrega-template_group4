@@ -7,8 +7,8 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      {/* <HomePage /> 
-     <FormRegister />  */}
+      <HomePage /> 
+     {/* <FormRegister />  */}
     </>
   )
 }

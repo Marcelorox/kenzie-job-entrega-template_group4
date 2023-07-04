@@ -1,11 +1,13 @@
-import { StyledFooter } from "./style.ts";
+
 import { StyledParagraph } from "../../style/typography";
+import img from "../../assets/img/jobs.svg"
+import { StyledFooter } from "./style";
 
 export function Footer() {
   return (
     <StyledFooter>
       <div className="footer_containner">
-        <h4>Jobs</h4>
+      <img src={img} alt="imagem logo"/>
         <StyledParagraph>
           Todos os direitos reservados - Kenzie Academy Brasil
         </StyledParagraph>

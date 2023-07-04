@@ -15,11 +15,9 @@ export const StyledHeader = styled.header`
     height: 84px;
   }
 
-  h4 {
-    color: var(--blue);
-    font-size: 3rem;
+img {
     position: absolute;
-    top: 0;
+    top: 10px;
     left: 0;
   }
 
