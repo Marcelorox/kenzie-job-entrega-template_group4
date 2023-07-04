@@ -3,6 +3,7 @@ import { api } from "../api/api";
 import { AxiosResponse } from "axios";
 import { useNavigate, NavigateFunction } from "react-router-dom";
 
+
 interface IAdminProviderProps{
     children: React.ReactNode;
 }
@@ -24,7 +25,7 @@ interface IAdminLogin {
     "password": string,
 }
 
-interface IAdminLoginResponse {
+interface IAdminLoginResponse{
     accessToken: string,
     user: IAdmin,
 }
@@ -41,8 +42,7 @@ interface Candidates {
     "id": number,
     "jobId": number,
     "userId": number,
-    "name": string,
-    "email": string,
+    "name": string,                                                                                                                                                                                                                                                                                                                                                            "email": string,
     "linkedin": string,
 }
 
@@ -59,7 +59,7 @@ interface AdminContextProps {
     candidates: IAdminCandidatesResponse | null;
     admin: IAdmin | null;
     navigate: NavigateFunction,
-    companyRegister: (formData: IAdminRegister) => void,
+    companyRegister: (formData: IAdminRegister) => void,  
     companyLogin: (formData: IAdminLogin) => void,
 }
 
@@ -76,7 +76,6 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
     
     const token = localStorage.getItem("@TOKEN")
     const userId = localStorage.getItem("@USERID")
-    
     const companyRegister = async (formData: IAdminRegister) => {
         try {
             await api.post("users", formData);
@@ -84,7 +83,7 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
             console.log(error);
         }
     }
-    
+
     const companyLogin = async (formData: IAdminLogin) => {
         try {
             const { data } = await api.post<IAdminLoginResponse>("sessions", formData);
@@ -144,4 +143,3 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
             {children}
         </AdminContext.Provider>
     )
-}
