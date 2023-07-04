@@ -20,7 +20,7 @@
     "zod": "^3.21.4",
      "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.6",
-     "@hookform/resolvers": "^3.1.1",
+     "@hookform/resolvers": "^3.1.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",
