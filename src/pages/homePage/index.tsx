@@ -5,6 +5,7 @@ import equipe from "../../assets/img/equipe.svg";
 import { StyledParagraph } from "../../style/typography";
 import { OpeningJobsList } from "../../components/openingJobs/openingJobsList";
 
+
 export function HomePage() {
   return (
     <>
@@ -37,7 +38,6 @@ export function HomePage() {
           <h1>Confira Nossas vagas</h1>
           < OpeningJobsList/>
           </div>
-
         </div>
       </Styledsection>
       <Footer />

@@ -30,10 +30,10 @@ img {
   }
   .span_containner {
     width: 150px;
-    height: 19.5;
+    height: 19px;
     position: absolute;
     bottom: 0;
-    right: 50%;
+    right: 25%;
   }
 
   .headerButton{
@@ -66,10 +66,12 @@ img {
       position: absolute;
       top: 0;
       right: 270px;
+    
     }
     span {
       position: absolute;
       top: 17.75px;
+      left: 0;
     }
   }
 `;

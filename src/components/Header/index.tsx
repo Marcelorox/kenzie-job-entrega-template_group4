@@ -2,6 +2,7 @@
 import { StyledHeader } from "./style.ts";
 import { StyledMenu } from "../../style/typography";
 import img from "../../assets/img/jobs.svg"
+import SearchIcon from '@mui/icons-material/Search';
 
 export function Header() {
   return (
@@ -12,7 +13,7 @@ export function Header() {
           <StyledMenu>acesso empresa</StyledMenu>
         </div>
         <button className="headerButton">Confira nossas vagas</button>
-        {/*<SearchIcon className="lupa" />*/}
+        <SearchIcon className="lupa" />
       </div>
     </StyledHeader>
   );
