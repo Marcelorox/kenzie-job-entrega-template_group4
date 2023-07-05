@@ -17,7 +17,9 @@ export const FormLogin = () => {
         <form onSubmit={handleSubmit(loginUserSubmit)}>
             <Input type="email" placeholder="E-mail" error={errors.email} { ...register("email")}/>
             <Input  type="password" placeholder="Senha" error={errors.password} { ...register("password")} />
-            <button type="submit">Entrar</button>
+            <div className="button_login">
+                <button type="submit">Entrar</button>
+            </div>
         </form>
     )
 }

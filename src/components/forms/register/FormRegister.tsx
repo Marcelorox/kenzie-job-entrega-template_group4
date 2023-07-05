@@ -21,7 +21,7 @@ export const FormRegister = () =>{
             <Input type="password" placeholder="Senha" error={errors.password} {...register("password")}/>
             <Input type="password" placeholder="Confirmar senha" error={errors.confirm_password} {...register("confirm_password")}/>
             <div className="form_button">
-             <Button text={"Cadastrar-se"} type="submit" />
+             <Button className="submit_register" text={"Cadastrar-se"} type="submit" />
             </div>
         </form>
     )

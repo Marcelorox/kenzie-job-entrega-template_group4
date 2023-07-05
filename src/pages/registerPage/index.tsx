@@ -16,7 +16,7 @@ export const RegisterPage = () => {
           <section>
             <div className="form_container">
               <div>
-                <StyledTitleOne>Cadastra-se</StyledTitleOne>
+                <StyledTitleOne>Cadastre-se</StyledTitleOne>
                 <FormRegister />
               </div>
             </div>
