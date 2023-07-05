@@ -1,5 +1,7 @@
+import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { FormRegister } from "../../components/forms/register/FormRegister";
+import { StyledParagraph, StyledTitleOne } from "../../style/typography";
 import { StyleContainerForm } from "./style";
 
 export const RegisterPage = () => {
@@ -9,18 +11,19 @@ export const RegisterPage = () => {
       <main>
         <StyleContainerForm>
           <div className="link_register">
-            <p>Voltar</p>
+            <StyledParagraph>Voltar</StyledParagraph>
           </div>
           <section>
             <div className="form_container">
               <div>
-                <h1>Cadastra-se</h1>
+                <StyledTitleOne>Cadastra-se</StyledTitleOne>
                 <FormRegister />
               </div>
             </div>
           </section>
         </StyleContainerForm>
       </main>
+      <Footer />
     </>
   );
 };

@@ -11,6 +11,7 @@ export const StyleContainerForm =styled.div`
         width: 100%;
         max-width: 480px;
         margin: auto;
+        margin-bottom: 70px;
         padding: 10px;
 
         div{
@@ -21,7 +22,7 @@ export const StyleContainerForm =styled.div`
     }
 
     .link_register{
-        margin-bottom: 20px;
+        margin-bottom: 70px;
         margin-left: 10px;
     }
     
@@ -41,24 +42,23 @@ export const StyleContainerForm =styled.div`
             border-radius: 50px;
             padding-left: 20px;
             margin-bottom: 10px;
-
-            ::placeholder{
-                font-size: var(--size-placeholder);
-                color: red;
-            }
             
-            
+        }
+        input::placeholder{
+            color: var(--size-placeholder);
         }
 
         .form_button{
             margin-top: 20px;
             display: flex;
             justify-content: flex-end;
-            border: 1px solid red
+            max-width: 480px;
+            width: 100%;
             
 
             button{
-                width: 1000%;
+                height: 40px;
+                width: 100%;
             }
         }
     }
@@ -66,12 +66,11 @@ export const StyleContainerForm =styled.div`
 
     @media (min-width: 600px){
         .form_button{
-            display: flex;
-            justify-content: flex-end;
+            
 
             button{
-                width: 10px;
-        
+               width: 50%;
+                background-color: green;
             }
         }
     

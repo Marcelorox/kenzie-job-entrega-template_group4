@@ -22,6 +22,7 @@ export const GlobalStyle = createGlobalStyle`
     --size-paragraph: 1.125rem;
    --size-label: 1.0625rem;
    --size-placeholder: 1rem;
+   --size-menu: 1rem;
 
     --weight-bold: 700;
 
