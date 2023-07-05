@@ -1,21 +1,26 @@
 import { Header } from "../../components/Header"
-import { StyleContainerForm } from "../registerPage/style"
 import banner from "../../assets/img/BannerLogin.png";
 import { FormLogin } from "../../components/forms/login/FormLogin";
+import { StyleContainerLoginPage } from "./style";
+import { StyledMenu, StyledParagraph, StyledTitleOne } from "../../style/typography";
 
 export const LoginPage = () =>{
     return(
         <>
             <Header />
             <main>
-                <StyleContainerForm />
+                <StyleContainerLoginPage >
                 <div className="container_banner">
                     <img src={banner} alt="Banner" />
                 </div>
                 <div className="container_login">
+                <StyledTitleOne>Faça Login</StyledTitleOne>
                     <FormLogin />
-                    <p>Nâo possui cadastro? <span>Cadastrar-se</span></p>
+                    <div className="createUser">
+                      <StyledParagraph>Nâo possui cadastro? <StyledMenu>Cadastrar-se</StyledMenu></StyledParagraph>
+                    </div>
                 </div>
+                </ StyleContainerLoginPage>
            </main>
         </>
     )
