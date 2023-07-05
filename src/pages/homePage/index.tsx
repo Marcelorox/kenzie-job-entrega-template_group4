@@ -37,7 +37,6 @@ export function HomePage() {
           <h1>Confira Nossas vagas</h1>
           < OpeningJobsList/>
           </div>
-
         </div>
       </Styledsection>
       <Footer />
