@@ -11,8 +11,7 @@ export const StyleContainerLoginPage = styled.div`
     
     .container_banner{
         display: none;
-        border: 2px solid red;
-
+    
     }
 
     .container_login{
