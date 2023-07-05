@@ -1,9 +1,7 @@
-//import SearchIcon from "@mui/icons-material/Search";
 import { StyledHeader } from "./style";
 import { StyledMenu } from "../../style/typography";
 import img from "../../assets/img/jobs.svg";
-import SearchIcon from '@mui/icons-material/Search';
-
+import { AiOutlineSearch } from 'react-icons/ai'
 
 export function Header() {
   return (
@@ -14,7 +12,7 @@ export function Header() {
           <StyledMenu>acesso empresa</StyledMenu>
         </div>
         <button className="headerButton">Confira nossas vagas</button>
-          <SearchIcon className="lupa" />
+        <AiOutlineSearch size="21px" className="lupa" />
       </div>
     </StyledHeader>
   );
