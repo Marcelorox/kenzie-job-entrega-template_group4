@@ -23,14 +23,17 @@ img {
 
   .lupa {
     height: 55px;
+    height: 30px;
     color: var(--blue);
     position: absolute;
     top: 0;
+    top: 10px;
     right: 0;
   }
+
   .span_containner {
     width: 150px;
-    height: 19.5;
+    height: 19px;
     position: absolute;
     bottom: 0;
     right: 50%;
@@ -70,6 +73,7 @@ img {
     span {
       position: absolute;
       top: 17.75px;
+      left:0;
     }
   }
 `;
