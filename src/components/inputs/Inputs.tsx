@@ -1,4 +1,5 @@
 import { HTMLAttributes, forwardRef, ForwardedRef } from "react";
+import { StyleAlertSchema } from "./StyleAlertSchema";
 
 interface IPropsInput extends HTMLAttributes<HTMLInputElement>{
     type: string;
@@ -12,7 +13,7 @@ export const Input = forwardRef(({ error, type, label, ...rest}: IPropsInput , r
         <>
             {label? <label> {label} </label>: null}
             <input type={type} ref={ref} {...rest} />
-            {error? <p>{error.message}</p>: null }
+            {error? <StyleAlertSchema>{error.message}</StyleAlertSchema>: null }
         </>
     )
 })

@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useState, useEffect } from "react";
 import { api } from "../api/api";
-import { NavigateFunction } from "react-router-dom";
+//import { NavigateFunction } from "react-router-dom";
 import { AxiosResponse } from "axios";
 
 interface JobResponse extends AxiosResponse {
@@ -8,28 +8,27 @@ interface JobResponse extends AxiosResponse {
 }
 
 interface Job {
-    "userId": number;
-    "id": number;
-    "position": string;
-    "salary": number;
-    "description": string;
+  userId: number;
+  id: number;
+  position: string;
+  salary: number;
+  description: string;
 }
 
 interface ApplicationsRequest {
-  "jobId": number,
-  "userId": number,
-  "name": string,
-  "email": string,
-  "linkedin": string
+  jobId: number;
+  userId: number;
+  name: string;
+  email: string;
+  linkedin: string;
 }
 
-interface ApplicationsResponse extends AxiosResponse{
-  data: {  
-  "name": string,
-  "email": string,
-  "linkedin": string
-}
-
+interface ApplicationsResponse extends AxiosResponse {
+  data: {
+    name: string;
+    email: string;
+    linkedin: string;
+  };
 }
 
 interface UserContextProps {
@@ -45,6 +44,7 @@ export const UserContext = createContext<UserContextProps>(
 
 export const UserProvider = ({ children }: { children: ReactNode }) => {
 
+
   const [jobs, setJobs] = useState<Job[] | []>([]);
   // const navigate = useNavigate();
 
@@ -57,13 +57,14 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-    useEffect(() => {
+  useEffect(() => {
     fetchJobs();
   }, []);
 
-     const fetchApplications = async (formData : ApplicationsResponse) => {
+  const fetchApplications = async (formData: ApplicationsResponse) => {
     try {
-      const {data} :  ApplicationsResponse = await api.post<ApplicationsRequest>("applications", formData);
+      const { data }: ApplicationsResponse =
+        await api.post<ApplicationsRequest>("applications", formData);
     } catch (error) {
       console.log(error);
     }
@@ -71,8 +72,8 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
 
   const value: UserContextProps = {
     jobs,
-    // navigate,
-    fetchApplications
+   // navigate,
+    fetchApplications,
   };
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;

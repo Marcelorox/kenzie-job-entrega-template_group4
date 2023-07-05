@@ -15,22 +15,23 @@ export const GlobalStyle = createGlobalStyle`
     --lightblue: #F9F9FF;
     --blue: #8490FF;
 
-    --size-title1: 4rem;
+    --size-title1: clamp(1.875rem, 10vw, 4rem);
     --size-title2: 2.75rem;
     --size-title3: 1.3125rem;
 
     --size-paragraph: 1.125rem;
    --size-label: 1.0625rem;
    --size-placeholder: 1rem;
+   --size-menu: 1rem;
 
     --weight-bold: 700;
 
     --Font-primary: 'Montserrat', sans-serif;
 
 
+
     button{
         cursor: pointer;
-        background-color: transparent;
         border: none;
     }
 
@@ -39,5 +40,15 @@ export const GlobalStyle = createGlobalStyle`
         border: none;
     }
 
+    a{
+        cursor: pointer;
+        text-decoration: none
+    }
+
+    ul{
+        list-style: none;
+    }
+
 }
+
 `
