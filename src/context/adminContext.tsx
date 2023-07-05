@@ -37,11 +37,11 @@ interface IAdminAddJobsResponse {
     "description": string,
 }
 
-// interface IAdminUpdateJobs {
-//     "position": string,
-//     "sallary": number,
-//     "description": string,
-// }
+interface IAdminUpdateJobs {
+    "position": string,
+    "sallary": number,
+    "description": string,
+}
 
 interface IAdminCandidatesResponse extends AxiosResponse {
     data: Candidates[]
@@ -54,7 +54,10 @@ interface IAdminJobResponse extends AxiosResponse {
 interface AdminContextProps {
     specificJobs: IAdminJobResponse[] | [];
     candidates: IAdminCandidatesResponse[] | [];
+    addJobs: (formData: IAdminAddJobs) => void
     navigate: NavigateFunction;
+    updateJobs: (formData: IAdminUpdateJobs, jobId: number) => void;
+    deleteJobs: (jobId: number) => void;
     handleLogout: () => void;
 }
 
@@ -71,7 +74,7 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
 
     const token = localStorage.getItem("@TOKEN")
     const userId = localStorage.getItem("@USERID")
-
+    
     const listComapnyJobs = async () => {
         try {
             const data : IAdminJobResponse[] = await api.get(`users/${userId}/jobs`, { headers: { Authorization : `Bearer ${token}` }})
@@ -79,12 +82,12 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
         } catch (error) {
             console.log(error)
         }
-
+        
         if(token && userId) {
-           listComapnyJobs()
+            listComapnyJobs()
         }
     }
-
+    
     const listComapnyCandidates = async () => {
         try {
             const data : IAdminCandidatesResponse[] = await api.get(`jobs/${userId}/applications`, { headers: { Authorization : `Bearer ${token}` }})
@@ -96,7 +99,7 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
             listComapnyCandidates()
         }
     }
-
+    
     const addJobs = async (formData: IAdminAddJobs) => {
         try {
             await api.post<IAdminAddJobsResponse>("jobs", formData, { headers: { Authorization : `Bearer ${token}` }});
@@ -104,15 +107,23 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
             console.log(error);
         }
     }
+    
+    const updateJobs = async (formData: IAdminUpdateJobs, jobId: number) => {
+        try {
+            await api.put(`jobs/${jobId}`, formData, { headers: { Authorization : `Bearer ${token}` }});
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
-    // const updateJobs = async (formData: IAdminUpdateJobs) => {
-    //     try {
-    //         await api.put("jobs/:id", { headers: { Authorization : `Bearer ${token}` }});
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
-    // }
-
+    const deleteJobs = async (jobId: number) => {
+        try {
+            await api.delete(`jobs/${jobId}`, { headers: { Authorization : `Bearer ${token}` }})
+        } catch (error) {
+            console.log(error) 
+        }
+    }
+    
     const handleLogout = () => {
         localStorage.removeItem("@TOKEN")
         localStorage.removeItem("@USERID")
@@ -125,6 +136,9 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
         candidates,
         navigate,
         handleLogout,
+        addJobs,
+        updateJobs,
+        deleteJobs,
     }
     
     return(
