@@ -1,12 +1,13 @@
 //import SearchIcon from "@mui/icons-material/Search";
 import { StyledHeader } from "./style.ts";
 import { StyledMenu } from "../../style/typography";
+import img from "../../assets/img/jobs.svg"
 
 export function Header() {
   return (
     <StyledHeader>
       <div className="header_containner">
-        <h4>Jobs</h4>
+        <img src={img} alt="imagem logo"/>
         <div className="span_containner">
           <StyledMenu>acesso empresa</StyledMenu>
         </div>

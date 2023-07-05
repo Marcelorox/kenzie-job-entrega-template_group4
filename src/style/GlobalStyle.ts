@@ -26,7 +26,7 @@ export const GlobalStyle = createGlobalStyle`
 
     --weight-bold: 700;
 
-    --Font-primary:'Inter', sans-serif;
+    --Font-primary: 'Montserrat', sans-serif;
 
 
 
