@@ -33,7 +33,7 @@ export const StyledParagraph = styled.p`
   line-height: 2.25rem;
 `;
 
-export const StyledLabel = styled.label`
+export const StyledLabel = styled.p`
   font-family: var(--Font-primary);
   font-weight: 400;
   font-size: var(--size-label);
