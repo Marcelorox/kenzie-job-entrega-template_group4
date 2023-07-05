@@ -8,28 +8,6 @@ interface IAdminProviderProps{
     children: React.ReactNode;
 }
 
-interface IAdmin{
-    "email": string,
-    "name": string,
-    "id": number,
-}
-
-interface IAdminRegister {
-    "email": string,
-    "password": string,
-    "name": string,
-}
-
-interface IAdminLogin {
-    "email": string,
-    "password": string,
-}
-
-interface IAdminLoginResponse{
-    accessToken: string,
-    user: IAdmin,
-}
-
 interface Jobs {
     "userId": number,
     "id": number,
@@ -46,22 +24,38 @@ interface Candidates {
     "linkedin": string,
 }
 
-interface IAdminCandidatesResponse {
-    data: Candidates
+interface IAdminAddJobs {
+    "position": string,
+    "sallary": string,
+    "description": string, 
+}
+
+interface IAdminAddJobsResponse {
+    "userId": number,
+    "position": string,
+    "sallary": string,
+    "description": string,
+}
+
+// interface IAdminUpdateJobs {
+//     "position": string,
+//     "sallary": number,
+//     "description": string,
+// }
+
+interface IAdminCandidatesResponse extends AxiosResponse {
+    data: Candidates[]
 }
 
 interface IAdminJobResponse extends AxiosResponse {
-    data: Jobs
+    data: Jobs[]
 }
 
 interface AdminContextProps {
-    specificJobs: IAdminJobResponse | null,
-    candidates: IAdminCandidatesResponse | null;
-    admin: IAdmin | null;
-    navigate: NavigateFunction,
-    companyRegister: (formData: IAdminRegister) => void,  
-    companyLogin: (formData: IAdminLogin) => void,
-    handleLogout: () => void,
+    specificJobs: IAdminJobResponse[] | [];
+    candidates: IAdminCandidatesResponse[] | [];
+    navigate: NavigateFunction;
+    handleLogout: () => void;
 }
 
 export const AdminContext = createContext<AdminContextProps>(
@@ -69,36 +63,18 @@ export const AdminContext = createContext<AdminContextProps>(
 );
 
 export const AdminProvider = ({children}: IAdminProviderProps) => {
-    const [admin, setAdmin] = useState<IAdmin | null>(null)
-    const [specificJobs, setSpecificJobs] = useState<IAdminJobResponse | null>(null)
-    const [candidates, setCandidates] = useState<IAdminCandidatesResponse | null>(null)
+    
+    const [specificJobs, setSpecificJobs] = useState<IAdminJobResponse[] | []>([])
+    const [candidates, setCandidates] = useState<IAdminCandidatesResponse[] | []>([])
 
     const navigate = useNavigate()
-    
+
     const token = localStorage.getItem("@TOKEN")
     const userId = localStorage.getItem("@USERID")
-    const companyRegister = async (formData: IAdminRegister) => {
-        try {
-            await api.post("users", formData);
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    const companyLogin = async (formData: IAdminLogin) => {
-        try {
-            const { data } = await api.post<IAdminLoginResponse>("sessions", formData);
-            localStorage.setItem("@TOKEN", data.accessToken);
-            localStorage.setItem("@ADMINID", String(data.user.id));
-            setAdmin(data.user);
-        } catch (error) {
-            console.log(error);
-        }
-    }
 
     const listComapnyJobs = async () => {
         try {
-            const data : IAdminJobResponse = await api.get(`users/${userId}/jobs`, { headers: { Authorization : `Bearer ${token}` }})
+            const data : IAdminJobResponse[] = await api.get(`users/${userId}/jobs`, { headers: { Authorization : `Bearer ${token}` }})
             setSpecificJobs(data)
         } catch (error) {
             console.log(error)
@@ -111,7 +87,7 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
 
     const listComapnyCandidates = async () => {
         try {
-            const data : IAdminCandidatesResponse = await api.get(`jobs/${userId}/applications`, { headers: { Authorization : `Bearer ${token}` }})
+            const data : IAdminCandidatesResponse[] = await api.get(`jobs/${userId}/applications`, { headers: { Authorization : `Bearer ${token}` }})
             setCandidates(data)
         } catch (error) {
             console.log(error)
@@ -120,22 +96,35 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
             listComapnyCandidates()
         }
     }
+
+    const addJobs = async (formData: IAdminAddJobs) => {
+        try {
+            await api.post<IAdminAddJobsResponse>("jobs", formData, { headers: { Authorization : `Bearer ${token}` }});
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    // const updateJobs = async (formData: IAdminUpdateJobs) => {
+    //     try {
+    //         await api.put("jobs/:id", { headers: { Authorization : `Bearer ${token}` }});
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // }
+
     const handleLogout = () => {
         localStorage.removeItem("@TOKEN")
         localStorage.removeItem("@USERID")
-        setAdmin(null)
-        setSpecificJobs(null)
+        setSpecificJobs([])
         navigate("/")
     }
     
     const value : AdminContextProps  = {
         specificJobs,
         candidates,
-        admin,
         navigate,
-        companyRegister,
-        companyLogin,
-        handleLogout
+        handleLogout,
     }
     
     return(
