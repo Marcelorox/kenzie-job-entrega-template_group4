@@ -6,7 +6,7 @@ export const StyledLi = styled.li`
   flex-direction: column;
   justify-content: center;
   list-style-type: style none;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   max-width: 1104px;
   min-height: 50px;
 
@@ -20,6 +20,7 @@ export const StyledLi = styled.li`
   .cardVaga_header {
     width: 100%;
     height: 50px;
+    margin-bottom:1rem;
   }
   .cardVaga_header--containner {
     position: relative;
@@ -30,12 +31,16 @@ export const StyledLi = styled.li`
     }
 
     .subIcon {
+      height: 20px;
+      width: 20px;
       color: #8490ff;
       position: absolute;
       left: 0;
       top: 0;
     }
     .addIcon {
+      height: 20px;
+      width: 20px;
       color: #8490ff;
       position: absolute;
       left: 0;

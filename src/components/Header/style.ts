@@ -15,17 +15,17 @@ export const StyledHeader = styled.header`
     height: 84px;
   }
 
-img {
+.jobs {
     position: absolute;
     top: 10px;
     left: 0;
   }
 
   .lupa {
-    height: 55px;
+    height: 30px;
     color: var(--blue);
     position: absolute;
-    top: 0;
+    top: 10px;
     right: 0;
   }
   .span_containner {

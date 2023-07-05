@@ -1,8 +1,8 @@
 import { StyledLi } from "./style";
-import { useState } from "react"
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
+import { useState } from "react";
 import { StyledLabel, StyledTitleThree } from "../../../style/typography";
+import add from "../../../assets/img/addIcons.svg";
+import sub from "../../../assets/img/subIcons.svg";
 
 interface IOpeningJobsCardProps {
   position: string;
@@ -25,33 +25,31 @@ export const OpeningJobsCard = ({
   const [showJob, setShowJob] = useState(false);
 
   function handdleShowJob() {
-    setShowJob(!showJob); 
+    setShowJob(!showJob);
   }
 
   return (
-    <StyledLi  className="cardVaga">
+    <StyledLi className="cardVaga">
       <div className="cardVaga_containner">
         <div className="cardVaga_header" onClick={() => handdleShowJob()}>
           <div className="cardVaga_header--containner">
-          {showJob? (
-          <RemoveIcon className="subIcon" fontSize="large" />
-        ) : (
-          <AddIcon className="addIcon" fontSize="large" />
-        )}
-          <div className="cardVaga_position">
-            <StyledLabel>Kenzie Academy Brasil</StyledLabel>
-            <StyledTitleThree>{position}</StyledTitleThree>
+            {showJob ? (
+              <img src={sub} className="subIcon" alt="sub icons" />
+            ) : (
+              <img src={add} className="addIcon" alt="add icons" />
+            )}
+            <div className="cardVaga_position">
+              <StyledLabel>Kenzie Academy Brasil</StyledLabel>
+              <StyledTitleThree>{position}</StyledTitleThree>
+            </div>
+            <button>Candidatar-se</button>
           </div>
-          <button>Candidatar-se</button>
         </div>
-          </div>
-      
-        <div className={showJob?"cardVaga_descripition":"cardVaga_none"}>
-            <p>{description}</p>
 
+        <div className={showJob ? "cardVaga_descripition" : "cardVaga_none"}>
+          <p>{description}</p>
         </div>
       </div>
-
     </StyledLi>
   );
 };
