@@ -51,28 +51,17 @@ export const StyleContainerForm =styled.div`
         .form_button{
             margin-top: 20px;
             display: flex;
-            justify-content: flex-end;
             max-width: 480px;
             width: 100%;
+            flex-direction: row;
+            justify-content: flex-end;
             
 
-            button{
+            .submit_register{
                 height: 40px;
-                width: 100%;
+                width: 40%;
             }
         }
     }
 
-
-    @media (min-width: 600px){
-        .form_button{
-            
-
-            button{
-               width: 50%;
-                background-color: green;
-            }
-        }
-    
-    }
 `
