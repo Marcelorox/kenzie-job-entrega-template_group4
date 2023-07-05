@@ -4,29 +4,9 @@ import { useContext,useRef } from "react";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { UserContext } from "../../context/candidateContext";
 import { Input } from "@mui/material";
-import { useForm } from "react-hook-form";
-import { candidateFormSchema } from "./zodCandidatura";
+import { useForm,SubmitHandler } from "react-hook-form";
+import { TCandicateForm, candidateFormSchema } from "./zodCandidatura";
 
-// export const FormLogin = () => {
-//   const { register, handleSubmit, formState: { errors }} = useForm<TLoginForm>({
-//       resolver: zodResolver(loginFormSchema)
-//   })
-
-//   const loginUserSubmit: SubmitHandler<TLoginForm> = (formData) =>{
-//       console.log(formData);
-      
-//   }
-
-//   return(
-//       <form onSubmit={handleSubmit(loginUserSubmit)}>
-//           <Input type="email" placeholder="E-mail" error={errors.email} { ...register("email")}/>
-//           <Input  type="password" placeholder="Senha" error={errors.password} { ...register("password")} />
-//           <div className="button_login">
-//               <button type="submit">Entrar</button>
-//           </div>
-//       </form>
-//   )
-// }
 
 export const Modal = () => {
 
@@ -44,9 +24,9 @@ export const Modal = () => {
   const modalRef = useRef(null);
   const buttonModalRef = useRef(null);
 
-  const candidateSubmit: SubmitHandler<TCandidateForm> = (formData) => {
-    console.log(formData)
-    fetchApplications(formData);
+  const candidateSubmit: SubmitHandler<TCandicateForm> = async (data) => {
+    console.log(data)
+    // fetchApplications(formData);
     reset();
   };
 

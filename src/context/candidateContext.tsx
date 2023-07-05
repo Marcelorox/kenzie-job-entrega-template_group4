@@ -48,7 +48,10 @@ interface IAdminLogin {
   "email": string,
   "password": string,
 }
-
+interface IApplyJob{
+  jobId: number;
+  userId: number;
+}
 interface IAdminLoginResponse{
   accessToken: string,
   user: IAdmin,
@@ -69,6 +72,8 @@ interface UserContextProps {
   companyLogin: (formData: IAdminLogin) => void;
   isOpen:boolean;
   setIsOpen:React.Dispatch<React.SetStateAction<boolean>>;
+  applyJob:IApplyJob| null;
+  setApplyJob:React.Dispatch<React.SetStateAction<IApplyJob | null>>
 }
 
 export const UserContext = createContext<UserContextProps>(
@@ -80,6 +85,7 @@ export const UserContext = createContext<UserContextProps>(
     const [admin, setAdmin] = useState<IAdmin | null>(null)
     const [jobs, setJobs] = useState<Job[] | []>([]);
     const [isOpen,setIsOpen]= useState(false)
+    const [applyJob,setApplyJob]= useState<IApplyJob| null>(null)
     // const navigate = useNavigate();
     
   const fetchJobs = async () => {
@@ -132,6 +138,8 @@ export const UserContext = createContext<UserContextProps>(
     companyLogin,
     setIsOpen,
     isOpen,
+    applyJob,
+    setApplyJob,
   };
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;

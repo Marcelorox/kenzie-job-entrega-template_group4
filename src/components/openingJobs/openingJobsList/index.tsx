@@ -22,7 +22,9 @@ console.log(jobs)
             < OpeningJobsCard 
               key={job.id}
               position={job.position}
-              description={job.description}  
+              description={job.description} 
+              jobApplyID={job.id} 
+              userApplyID={job.userId} 
             /> )
           )}
         </StyledUl>
