@@ -1,5 +1,6 @@
 import { GlobalStyle } from "./style/GlobalStyle";
 import { RegisterPage } from "./pages/registerPage";
+import { HomePage } from "./pages/homePage";
 
 function App() {
   return (
@@ -10,5 +11,4 @@ function App() {
     </>
   )
 }
-
 export default App;
