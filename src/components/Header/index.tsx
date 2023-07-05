@@ -1,9 +1,9 @@
-//import SearchIcon from "@mui/icons-material/Search";
 
 import { StyledMenu } from "../../style/typography";
 import img from "../../assets/img/jobs.svg"
 import lupa from "../../assets/img/lupa (2).svg"
 import { StyledHeader } from "./style";
+import { StyledMenu } from "../../style/typography";
 
 export function Header() {
   return (
