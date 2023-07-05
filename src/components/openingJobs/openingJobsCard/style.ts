@@ -37,6 +37,7 @@ export const StyledLi = styled.li`
       position: absolute;
       left: 0;
       top: 0;
+      cursor: pointer;
     }
     .addIcon {
       height: 20px;
@@ -45,6 +46,7 @@ export const StyledLi = styled.li`
       position: absolute;
       left: 0;
       top: 0;
+      cursor: pointer;
     }
 
     button {
@@ -70,8 +72,8 @@ export const StyledLi = styled.li`
 
   .cardVaga_descripition {
     width: 100%;
-    max-width: 917px;
-    height: 40px;
+    max-width: 985px;
+    min-height: 60px;
   }
   .cardVaga_none{
     display:none;

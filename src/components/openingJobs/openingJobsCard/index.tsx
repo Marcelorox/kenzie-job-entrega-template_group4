@@ -1,8 +1,10 @@
 import { StyledLi } from "./style";
 import { useState } from "react";
-import { StyledLabel, StyledTitleThree } from "../../../style/typography";
+import { StyledLabel, StyledParagraph, StyledTitleThree } from "../../../style/typography";
 import add from "../../../assets/img/addIcons.svg";
 import sub from "../../../assets/img/subIcons.svg";
+import { UserContext } from "../../../context/candidateContext";
+import { useContext} from "react";
 
 interface IOpeningJobsCardProps {
   position: string;
@@ -13,20 +15,15 @@ export const OpeningJobsCard = ({
   position,
   description,
 }: IOpeningJobsCardProps) => {
-  // const putItemBuy = (productID) => {
-  //   const itemExiste = itemBuyList.some((itemBuy) => itemBuy.id === productID);
-  //   if (itemExiste) {
-  //     toast.error("Não é possivel adicionar o mesmo item mais de uma vez ao carrinho");
-  //   } else {
-  //     setItemBuyList((itemBuyList) => [...itemBuyList, product]);
-  //   }
-  // };
+
 
   const [showJob, setShowJob] = useState(false);
 
+  const{isOpen,setIsOpen} = useContext(UserContext)
+
   function handdleShowJob() {
     setShowJob(!showJob);
-  }
+  } 
 
   return (
     <StyledLi className="cardVaga">
@@ -42,12 +39,12 @@ export const OpeningJobsCard = ({
               <StyledLabel>Kenzie Academy Brasil</StyledLabel>
               <StyledTitleThree>{position}</StyledTitleThree>
             </div>
-            <button>Candidatar-se</button>
+            <button onClick={() => setIsOpen(true)}>Candidatar-se</button>
           </div>
         </div>
 
         <div className={showJob ? "cardVaga_descripition" : "cardVaga_none"}>
-          <p>{description}</p>
+          <StyledParagraph>{description}</StyledParagraph>
         </div>
       </div>
     </StyledLi>

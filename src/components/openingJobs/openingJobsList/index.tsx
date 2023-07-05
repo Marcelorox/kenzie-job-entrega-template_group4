@@ -13,7 +13,7 @@ if (!jobs.length) {
     <p>Não ha vagas disponíveis no momento</p>
     )
 }
-
+console.log(jobs)
   return (
     <>
       <section>

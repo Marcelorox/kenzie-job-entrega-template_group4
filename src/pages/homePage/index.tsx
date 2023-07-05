@@ -1,14 +1,22 @@
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { Styledsection } from "./style";
-//import equipe from "../../assets/img/equipe.svg";
+import equipe from "../../assets/img/equipe.svg";
 import { StyledParagraph } from "../../style/typography";
 import { OpeningJobsList } from "../../components/openingJobs/openingJobsList";
+import { useContext} from "react";
+import { UserContext } from "../../context/candidateContext";
+import { Modal } from "../../components/modal/index.jsx";
+
 
 
 export function HomePage() {
+
+  const{isOpen} = useContext(UserContext)
+
   return (
     <>
+    {isOpen? <Modal/> : null}
       <Header />
       <Styledsection className="homeJobs_containner">
         <div className="homeJobs_caixa">
@@ -29,7 +37,7 @@ export function HomePage() {
               </StyledParagraph>
             </div>
             <div className="homeJobs_aboutUsImg">
-              {/*<img src={equipe} alt="Equipe unida" />*/}
+              <img src={equipe} alt="Equipe unida" />
             </div>
           </div>
         </div>
@@ -44,3 +52,4 @@ export function HomePage() {
     </>
   );
 }
+
