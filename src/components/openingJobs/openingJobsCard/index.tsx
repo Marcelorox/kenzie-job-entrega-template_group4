@@ -5,9 +5,9 @@ import add from "../../../assets/img/addIcons.svg";
 import sub from "../../../assets/img/subIcons.svg";
 import { UserContext } from "../../../context/candidateContext";
 import { useContext} from "react";
-import { func } from "prop-types";
+// import { func } from "prop-types";
 
-interface IUsers {
+export interface IUsers {
   email: string;
   password: string;
   name: string;
@@ -28,10 +28,9 @@ export const OpeningJobsCard = ({
   user
 }: IOpeningJobsCardProps) => {
 
-
   const [showJob, setShowJob] = useState(false);
 
-  const{isOpen,setIsOpen, setApplyJob,applyJob} = useContext(UserContext)
+  const{setIsOpen, setApplyJob} = useContext(UserContext)
 
  const handdleShowJob = () =>{
     setShowJob(!showJob);
@@ -42,6 +41,7 @@ const applyClickButton = () =>{
   setApplyJob({"userId":user.id,"jobId": jobApplyID,"position":position, "empresa":user.name})
   console.log(setApplyJob)
 }
+
   return (
     <StyledLi className="cardVaga">
       <div className="cardVaga_containner">
@@ -59,7 +59,7 @@ const applyClickButton = () =>{
             <button className="buttonCard"onClick={() => applyClickButton()}>Candidatar-se</button>
           </div>
         </div>
-
+        
         <div className={showJob ? "cardVaga_descripition" : "cardVaga_none"}>
           <StyledParagraph>{description}</StyledParagraph>
         </div>
