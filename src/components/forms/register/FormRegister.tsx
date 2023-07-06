@@ -3,14 +3,17 @@ import { Input } from "../../inputs/Inputs"
 import { TRegisterForm, registerFormSchema } from "./RegisterFormSchema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Button } from "../../button/Button"
+import { useContext } from "react";
+import { UserContext } from "../../../context/candidateContext"
 
 export const FormRegister = () =>{
     const { register, handleSubmit, formState: { errors }} = useForm<TRegisterForm>({
         resolver: zodResolver(registerFormSchema)
     })
+    const { companyRegister } = useContext(UserContext)
 
    const registerUserSubmit: SubmitHandler<TRegisterForm> = (formData) =>{
-        console.log(formData);
+        companyRegister(formData);
         
    }
 

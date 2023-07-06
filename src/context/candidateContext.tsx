@@ -3,6 +3,8 @@ import { api } from "../api/api";
 //import { NavigateFunction } from "react-router-dom";
 import { AxiosResponse } from "axios";
 import { boolean } from "zod";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 interface JobResponse extends AxiosResponse {
   data: Job[];
@@ -87,7 +89,7 @@ interface IIsOpen {
 
 interface UserContextProps {
   jobs: Job[] | [];
-  // navigate: NavigateFunction;
+  navigate: NavigateFunction;
   fetchApplications: (formData: ApplicationsResponse) => void;
   admin: IAdmin | null;
   companyRegister: (formData: IAdminRegister) => void;
@@ -111,6 +113,17 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   const [applyJob, setApplyJob] = useState<IApplyJob | null>(null);
   // const navigate = useNavigate();
 
+=======
+  );
+  
+  export const UserProvider = ({ children }: { children: ReactNode }) => {
+    
+    const [admin, setAdmin] = useState<IAdmin | null>(null)
+    const [jobs, setJobs] = useState<Job[] | []>([]);
+    const [isOpen,setIsOpen]= useState(false)
+    const [applyJob,setApplyJob]= useState<IApplyJob| null>(null)
+    const navigate = useNavigate();
+    
   const fetchJobs = async () => {
     try {
       const { data }: JobResponse = await api.get("jobs",{ 
@@ -145,6 +158,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const companyRegister = async (formData: IAdminRegister) => {
+
     try {
       await api.post("users", formData);
     } catch (error) {
@@ -169,6 +183,31 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   const value: UserContextProps = {
     jobs,
     // navigate,
+      try {
+          await  api.post("users", formData);
+          toast.success("Empresa criada com sucesso")
+          navigate("/entrar")
+      } catch (error) {
+          console.log(error);
+          toast.error("Dados já cadastrados")
+      }
+  }
+
+  const companyLogin = async (formData: IAdminLogin) => {
+      try {
+          const { data } = await api.post<IAdminLoginResponse>("sessions", formData);
+          localStorage.setItem("@TOKEN", data.accessToken);
+          localStorage.setItem("@ADMINID", String(data.user.id));
+          setAdmin(data.user);
+      } catch (error) {
+          console.log(error);
+          toast.error("Senha ou E-mail incorretos")
+      }
+  }
+
+  const value: UserContextProps = {
+    jobs,
+   navigate,
     admin,
     fetchApplications,
     companyRegister,

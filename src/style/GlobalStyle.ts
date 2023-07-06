@@ -30,6 +30,9 @@ export const GlobalStyle = createGlobalStyle`
     --Font-primary: 'Montserrat', sans-serif;
 
 
+    body, button, label {
+        font-family: var(--Font-primary);
+    }
 
     button{
         cursor: pointer;

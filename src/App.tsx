@@ -1,19 +1,26 @@
-// import { LoginPage } from "./pages/loginPage";
+
 import { GlobalStyle } from "./style/GlobalStyle";
-// import { RegisterPage } from "./pages/registerPage";
-import { HomePage } from "./pages/homePage";
-//import { RegisterPage } from "./pages/registerPage";
+import { RoutesMain } from "./routes";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      {/*<HomePage />*/}
-      {/* <RegisterPage /> */}
-      {/* <LoginPage /> */}
-      <HomePage />
-      {/*<RegisterPage />*/}
+      <RoutesMain />
+      <ToastContainer position="top-right"
+                                  autoClose={1000}
+                                  hideProgressBar
+                                  newestOnTop={false}
+                                  closeOnClick
+                                  rtl={false}
+                                  pauseOnFocusLoss
+                                  draggable
+                                  pauseOnHover
+                                  theme="light"/>
     </>
   )
 }
