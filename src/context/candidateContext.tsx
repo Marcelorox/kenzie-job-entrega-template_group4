@@ -125,10 +125,12 @@ export const UserContext = createContext<UserContextProps>(
 
   const companyLogin = async (formData: IAdminLogin) => {
       try {
-          const { data } = await api.post<IAdminLoginResponse>("sessions", formData);
+        console.log("entrou");
+        const { data } = await api.post<IAdminLoginResponse>("login", formData);
           localStorage.setItem("@TOKEN", data.accessToken);
           localStorage.setItem("@ADMINID", String(data.user.id));
           setAdmin(data.user);
+          navigate("/dashboard")
       } catch (error) {
           console.log(error);
           toast.error("Senha ou E-mail incorretos")
@@ -137,7 +139,7 @@ export const UserContext = createContext<UserContextProps>(
 
   const value: UserContextProps = {
     jobs,
-   navigate,
+    navigate,
     admin,
     fetchApplications,
     companyRegister,

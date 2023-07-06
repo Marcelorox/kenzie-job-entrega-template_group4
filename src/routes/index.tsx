@@ -4,8 +4,10 @@ import { PublicRoutes } from "./publicRoutes"
 import { RegisterPage } from "../pages/registerPage"
 import { LoginPage } from "../pages/loginPage"
 import { SearchJobOpennings } from "../pages/searchOpenningsJob"
-// import { ProtectedRoutes } from "./privateRoutes"
-// import { AdminContext } from "../context/adminContext"
+import { ProtectedRoutes } from "./privateRoutes"
+import { AdminProvider } from "../context/adminContext"
+import { AdminPage } from "../pages/adminPage"
+//import { AdminContext } from "../context/adminContext"
 
 
 export const RoutesMain = () =>{
@@ -18,10 +20,10 @@ export const RoutesMain = () =>{
                 <Route path="/pesquisa" element={<SearchJobOpennings/>}/>
             </Route>
             
-            {/* <Route path="/dashboard" element={<ProtectedRoutes/>}>
-                <Route index element={<AdminContext></AdminContext>}/>
-                <Route element={}/>
-            </Route> */}
+            <Route path="/dashboard" element={<ProtectedRoutes/>}>
+                <Route index element={<AdminProvider><AdminPage /></AdminProvider>}/>
+                {/*<Route element={}/>*/}
+            </Route> 
         </Routes>
     )
 }
