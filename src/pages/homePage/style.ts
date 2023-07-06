@@ -100,6 +100,7 @@ export const Styledsection = styled.section`
   img {
     width: 100%;
     max-width: 600px;
+    margin-top: 1rem;
   }
 
   @media (min-width: 600px) {
@@ -113,6 +114,9 @@ export const Styledsection = styled.section`
     .homeJobs_aboutUsConatainner {
       flex-direction: row;
       justify-content: space-between;
+    }
+    img{
+      margin-top: 0;
     }
   }
 `;

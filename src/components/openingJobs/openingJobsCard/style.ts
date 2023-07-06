@@ -12,18 +12,16 @@ export const StyledLi = styled.li`
 
   .cardVaga_containner {
     display: flex;
-    min-height: 70px;
+    min-height: 150px;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
   .cardVaga_header {
     width: 100%;
-    height: 50px;
-    margin-bottom:1rem;
+    min-height: 150px;
+    margin-bottom: 1rem;
+    position: relative;
   }
   .cardVaga_header--containner {
-    position: relative;
     margin-bottom: 1rem;
 
     p {
@@ -49,9 +47,10 @@ export const StyledLi = styled.li`
       cursor: pointer;
     }
 
-    button {
+    .buttonCard{
       position: absolute;
-      right: 0;
+      bottom: 0;
+      right: 32%;
       color: var(--blue);
       border: 1px solid var(--blue);
       border-radius: 40px;
@@ -62,6 +61,9 @@ export const StyledLi = styled.li`
       color: var(--blue);
       border: 1px solid var(--blue);
       border-radius: 40px;
+      @media(min-width: 800px) {
+        right: 0%;
+      }
     }
 
     .cardVaga_position {
@@ -75,14 +77,25 @@ export const StyledLi = styled.li`
     max-width: 985px;
     min-height: 60px;
   }
-  .cardVaga_none{
-    display:none;
+  .cardVaga_none {
+    display: none;
   }
-
-  @media (min-width: 600px) {
-    button {
-      position: absolute;
-      right: 0;
+h3{
+  margin-top: 0.5rem;
+}
+  @media(min-width: 800px) {
+    .cardVaga_containner {
+      align-items: center;
+      min-height: 80px;
+      justify-content: center;
+    }
+    .cardVaga_header {
+      width: 100%;
+      min-height: 50px;
+    }
+    .cardVaga_header {
+      width: 100%;
+      min-height: 50px;
     }
   }
 `;
