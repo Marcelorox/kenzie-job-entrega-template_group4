@@ -75,6 +75,7 @@ interface IApplyJob {
   jobId: number;
   userId: number;
   position: string;
+  empresa: string;
 }
 interface IAdminLoginResponse {
   accessToken: string;
