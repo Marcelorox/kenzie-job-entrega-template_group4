@@ -21,6 +21,9 @@ export const Styledsection = styled.section`
   .homeJobs_fraseInicial {
     width: 100%;
     max-width: 1328px;
+    h1{
+      font-size: 2.9rem;
+    }
   }
 
   h1 {
@@ -39,6 +42,7 @@ export const Styledsection = styled.section`
     flex-wrap: wrap;
     margin-top: 1rem;
     margin-bottom: 1rem;
+   
   }
 
   .homeJobs_aboutUsConatainner {
@@ -46,11 +50,13 @@ export const Styledsection = styled.section`
     max-width: 1328px;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 
     h1 {
       color: #8490ff;
       margin-bottom: 1rem;
+      font-size: 2.6rem;
     }
   }
 
@@ -82,11 +88,12 @@ export const Styledsection = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
+  
 
     h1 {
       color: #8490ff;
       align-self: center;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
   }
 

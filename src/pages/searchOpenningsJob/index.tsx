@@ -51,6 +51,7 @@ export const SearchJobOpennings = () => {
               placeholder="Pesquisar"
               value={inputValue}
               onChange={handleInputChange}
+              error="Este campo é obrigatório"
             />
             <StyledButton type="submit">
               <img src={searchImg} alt="lupa de pesquisa" />
