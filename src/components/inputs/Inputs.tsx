@@ -5,7 +5,7 @@ interface IPropsInput extends HTMLAttributes<HTMLInputElement>{
     type: string;
     label?: string;
     error: any;
-    value: string;
+    value?: string;
 }
 
 export const Input = forwardRef(({ error, type, label, value, ...rest}: IPropsInput , ref: ForwardedRef<HTMLInputElement>)  =>{

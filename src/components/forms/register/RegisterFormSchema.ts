@@ -22,7 +22,7 @@ export const registerFormSchema = z.object({
     .nonempty("Confirmar senha é obrigatório")
 }).refine(({ password, confirm_password}) => password === confirm_password, {
   message: "As senhas precisam ser iguais",
-  path: ["confirm"],
+  path: ["confirm_password"],
 } )
 
 export type TRegisterForm = z.infer<typeof registerFormSchema>
