@@ -3,6 +3,8 @@ import { api } from "../api/api";
 //import { NavigateFunction } from "react-router-dom";
 import { AxiosResponse } from "axios";
 import { boolean } from "zod";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 interface JobResponse extends AxiosResponse {
   data: Job[]
@@ -65,7 +67,7 @@ interface IIsOpen{
 interface UserContextProps {
   
   jobs: Job[] | [];
-  // navigate: NavigateFunction;
+  navigate: NavigateFunction;
   fetchApplications: (formData: ApplicationsResponse) => void;
   admin: IAdmin | null;
   companyRegister: (formData: IAdminRegister) => void;
@@ -86,7 +88,7 @@ export const UserContext = createContext<UserContextProps>(
     const [jobs, setJobs] = useState<Job[] | []>([]);
     const [isOpen,setIsOpen]= useState(false)
     const [applyJob,setApplyJob]= useState<IApplyJob| null>(null)
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     
   const fetchJobs = async () => {
     try {
@@ -112,9 +114,12 @@ export const UserContext = createContext<UserContextProps>(
 
   const companyRegister = async (formData: IAdminRegister) => {
       try {
-          await api.post("users", formData);
+          await  api.post("users", formData);
+          toast.success("Empresa criada com sucesso")
+          navigate("/entrar")
       } catch (error) {
           console.log(error);
+          toast.error("Dados já cadastrados")
       }
   }
 
@@ -126,12 +131,13 @@ export const UserContext = createContext<UserContextProps>(
           setAdmin(data.user);
       } catch (error) {
           console.log(error);
+          toast.error("Senha ou E-mail incorretos")
       }
   }
 
   const value: UserContextProps = {
     jobs,
-   // navigate,
+   navigate,
     admin,
     fetchApplications,
     companyRegister,
