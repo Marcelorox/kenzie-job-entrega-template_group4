@@ -129,6 +129,9 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
         localStorage.removeItem("@USERID")
         setSpecificJobs([])
         navigate("/")
+        console.log("teste");
+        
+        
     }
     
     const value : AdminContextProps  = {
