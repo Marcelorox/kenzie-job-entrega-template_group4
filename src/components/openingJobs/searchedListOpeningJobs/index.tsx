@@ -5,6 +5,7 @@ import { OpeningJobsCard } from "../openingJobsCard";
 interface SearchedListJobOpenningsProps { filteredJobs: IFilteredJobs[]; }
 
 export const SearchedListOpeningJobs: React.FC<SearchedListJobOpenningsProps> = ({ filteredJobs }) => {
+
   return (
     <>
       {filteredJobs.map((job) => (
@@ -12,7 +13,7 @@ export const SearchedListOpeningJobs: React.FC<SearchedListJobOpenningsProps> = 
           position={job.position}
           description={job.description} 
           jobApplyID={job.id} 
-          userApplyID={job.userId} />
+          user={job.user} />
         ))}
     </>
   );

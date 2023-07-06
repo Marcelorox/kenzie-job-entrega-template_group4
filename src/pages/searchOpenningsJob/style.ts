@@ -1,13 +1,21 @@
 import styled from "styled-components";
 
+export const StyleBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+`
+
 export const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  max-width: 1328px;
-  height: 80vh;
+  max-width: 83rem;
+  height: max-content;
+  min-height: 79.5vh;
   font-family: var(--Font-primary);
 
   h1 {
@@ -75,8 +83,6 @@ export const StyledMain = styled.main`
     margin-top: 40px;
     padding-top: 20px;
     width: 80vw;
-    max-height: 17rem;
-    overflow: auto;
   }
 
   .emptyList {
@@ -96,6 +102,11 @@ export const StyledMain = styled.main`
     justify-content: flex-start;
     align-items: center;
     padding-top: 2rem;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
   }
 
   @media(max-width: 600px) {
