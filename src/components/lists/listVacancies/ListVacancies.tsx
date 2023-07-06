@@ -22,7 +22,7 @@ return(
         <div>
             <ul>
             {
-                specificJobs.map( vacancy => vacancy.length === 0? <StyledTitleTwo>Não há vagas cadastradas</StyledTitleTwo> :null )
+              /*  specificJobs.map( vacancy => vacancy.length === 0? <StyledTitleTwo>Não há vagas cadastradas</StyledTitleTwo> :null )*/
             }
             </ul>
         </div>

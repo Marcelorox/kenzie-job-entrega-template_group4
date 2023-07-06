@@ -21,7 +21,7 @@ export const AdminPage = () => {
               Seja bem vindo {"(a)"}, selecione uma das opções abaixo:
             </StyledParagraph>
           </div>
-          <div>
+          <div className="buttons_admin">
             <button onClick={() => setOptionRender("vacancies")}>
               Minhas vagas
             </button>
