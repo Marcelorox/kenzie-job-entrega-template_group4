@@ -31,22 +31,6 @@ export const StyledSection = styled.section`
     gap: 1rem;
   }
 
-  button {
-    display: flex;
-    background-color: black;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    width: 66px;
-    height: 66px;
-    right: 0;
-    bottom: 0;
-    border-radius: 50%;
-    padding: 5px;
-    background-color: var(--blue);
-    border: 1px solid var(--blue);
-  }
-
   input {
     display: flex;
     border: 1px solid blue;
@@ -70,6 +54,22 @@ export const StyledSection = styled.section`
     font-size: 1rem;
     font-weight: var(--weight-bold);
     color: var(--black);
-    line-height: 19.5px;
+    line-height: 20px;
   }
+`
+
+export const StyledButton = styled.button`
+    display: flex;
+    background-color: black;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 66px;
+    height: 66px;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
 `
