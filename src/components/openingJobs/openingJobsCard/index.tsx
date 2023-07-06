@@ -1,33 +1,38 @@
 import { StyledLi } from "./style";
 import { useState } from "react";
-import { StyledLabel, StyledTitleThree } from "../../../style/typography";
+import { StyledLabel, StyledParagraph, StyledTitleThree } from "../../../style/typography";
 import add from "../../../assets/img/addIcons.svg";
 import sub from "../../../assets/img/subIcons.svg";
+import { UserContext } from "../../../context/candidateContext";
+import { useContext} from "react";
+import { func } from "prop-types";
 
 interface IOpeningJobsCardProps {
   position: string;
   description: string;
+  jobApplyID:number;
+  userApplyID:number
 }
 
 export const OpeningJobsCard = ({
   position,
   description,
+  jobApplyID,
+  userApplyID
 }: IOpeningJobsCardProps) => {
-  // const putItemBuy = (productID) => {
-  //   const itemExiste = itemBuyList.some((itemBuy) => itemBuy.id === productID);
-  //   if (itemExiste) {
-  //     toast.error("Não é possivel adicionar o mesmo item mais de uma vez ao carrinho");
-  //   } else {
-  //     setItemBuyList((itemBuyList) => [...itemBuyList, product]);
-  //   }
-  // };
+
 
   const [showJob, setShowJob] = useState(false);
 
-  function handdleShowJob() {
-    setShowJob(!showJob);
-  }
+  const{isOpen,setIsOpen, setApliJob} = useContext(UserContext)
 
+ const handdleShowJob = () =>{
+    setShowJob(!showJob);
+  } 
+const applyClickButton = () =>{
+  setIsOpen(true)
+  setApliJob({"userID":userApplyID,"id": jobApplyID})
+}
   return (
     <StyledLi className="cardVaga">
       <div className="cardVaga_containner">
@@ -42,12 +47,12 @@ export const OpeningJobsCard = ({
               <StyledLabel>Kenzie Academy Brasil</StyledLabel>
               <StyledTitleThree>{position}</StyledTitleThree>
             </div>
-            <button>Candidatar-se</button>
+            <button onClick={() => applyClickButton()}>Candidatar-se</button>
           </div>
         </div>
 
         <div className={showJob ? "cardVaga_descripition" : "cardVaga_none"}>
-          <p>{description}</p>
+          <StyledParagraph>{description}</StyledParagraph>
         </div>
       </div>
     </StyledLi>
