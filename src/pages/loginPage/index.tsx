@@ -3,6 +3,7 @@ import banner from "../../assets/img/BannerLogin.png";
 import { FormLogin } from "../../components/forms/login/FormLogin";
 import { StyleContainerLoginPage } from "./style";
 import { StyledMenu, StyledParagraph, StyledTitleOne } from "../../style/typography";
+import { Footer } from "../../components/Footer";
 
 export const LoginPage = () =>{
     return(
@@ -22,6 +23,7 @@ export const LoginPage = () =>{
                 </div>
                 </ StyleContainerLoginPage>
            </main>
+           <Footer />
         </>
     )
 

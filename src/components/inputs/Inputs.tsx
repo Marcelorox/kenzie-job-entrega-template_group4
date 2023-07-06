@@ -12,13 +12,8 @@ export const Input = forwardRef(({ error, type, label, value, ...rest}: IPropsIn
     return(
         <>
             {label? <label> {label} </label>: null}
-<<<<<<< HEAD
-            <input type={type} ref={ref} value={value} {...rest} />
-            {error? <p>{error.message}</p>: null }
-=======
             <input type={type} ref={ref} {...rest} />
             {error? <StyleAlertSchema>{error.message}</StyleAlertSchema>: null }
->>>>>>> ab1ed985531ead266362509d2c872fed5af3ff56
         </>
     )
 })

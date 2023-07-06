@@ -4,16 +4,14 @@ import { GlobalStyle } from "./style/GlobalStyle";
 import { SearchJobOpennings } from "./pages/searchOpenningsJob";
 import { LoginPage } from "./pages/loginPage";
 import { HomePage } from "./pages/homePage";
+import { RoutesMain } from "./routes";
 
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <SearchJobOpennings /> 
-      {/* <FormRegister />   */}
-
-      <HomePage /> 
+      <RoutesMain />
     </>
   )
 }
