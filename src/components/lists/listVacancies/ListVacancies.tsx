@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { StyledParagraph, StyledTitleOne, StyledTitleTwo } from "../../../style/typography"
+import { StyledParagraph, StyledTitleOne} from "../../../style/typography"
 import { StyleContainerVacancies } from "./StyleContainerVacancies"
 import add from "../../../assets/img/add.png";
 import { useContext } from "react";
