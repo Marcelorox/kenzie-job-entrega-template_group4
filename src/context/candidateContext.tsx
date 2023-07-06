@@ -125,7 +125,6 @@ export const UserContext = createContext<UserContextProps>(
 
   const companyLogin = async (formData: IAdminLogin) => {
       try {
-        console.log("entrou");
         const { data } = await api.post<IAdminLoginResponse>("login", formData);
           localStorage.setItem("@TOKEN", data.accessToken);
           localStorage.setItem("@ADMINID", String(data.user.id));
