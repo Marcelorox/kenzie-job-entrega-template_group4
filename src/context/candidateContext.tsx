@@ -2,6 +2,7 @@ import { createContext, ReactNode, useState, useEffect } from "react";
 import { api } from "../api/api";
 //import { NavigateFunction } from "react-router-dom";
 import { AxiosResponse } from "axios";
+import { boolean } from "zod";
 
 interface JobResponse extends AxiosResponse {
   data: Job[]
@@ -47,8 +48,16 @@ interface IAdminLogin {
   "email": string,
   "password": string,
 }
-
+interface IApplyJob{
+  jobId: number;
+  userId: number;
+}
 interface IAdminLoginResponse{
+  accessToken: string,
+  user: IAdmin,
+}
+
+interface IIsOpen{
   accessToken: string,
   user: IAdmin,
 }
@@ -61,6 +70,10 @@ interface UserContextProps {
   admin: IAdmin | null;
   companyRegister: (formData: IAdminRegister) => void;
   companyLogin: (formData: IAdminLogin) => void;
+  isOpen:boolean;
+  setIsOpen:React.Dispatch<React.SetStateAction<boolean>>;
+  applyJob:IApplyJob| null;
+  setApplyJob:React.Dispatch<React.SetStateAction<IApplyJob | null>>
 }
 
 export const UserContext = createContext<UserContextProps>(
@@ -71,6 +84,8 @@ export const UserContext = createContext<UserContextProps>(
     
     const [admin, setAdmin] = useState<IAdmin | null>(null)
     const [jobs, setJobs] = useState<Job[] | []>([]);
+    const [isOpen,setIsOpen]= useState(false)
+    const [applyJob,setApplyJob]= useState<IApplyJob| null>(null)
     // const navigate = useNavigate();
     
   const fetchJobs = async () => {
@@ -121,6 +136,10 @@ export const UserContext = createContext<UserContextProps>(
     fetchApplications,
     companyRegister,
     companyLogin,
+    setIsOpen,
+    isOpen,
+    applyJob,
+    setApplyJob,
   };
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;

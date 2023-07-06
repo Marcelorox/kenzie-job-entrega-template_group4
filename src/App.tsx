@@ -11,7 +11,7 @@ function App() {
       <GlobalStyle />
       {/*<HomePage />*/}
       {/* <RegisterPage /> */}
-      <LoginPage />
+      {/* <LoginPage /> */}
       {/*<HomePage /> */}
       {/*<RegisterPage />*/}
     </>

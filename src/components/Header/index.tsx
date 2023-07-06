@@ -1,10 +1,8 @@
 
 import { StyledMenu } from "../../style/typography";
 import img from "../../assets/img/jobs.svg"
-import lupa from "../../assets/img/lupa (2).svg"
+import lupa from "../../assets/img/lupa.svg"
 import { StyledHeader } from "./style";
-
-
 
 export function Header() {
   return (

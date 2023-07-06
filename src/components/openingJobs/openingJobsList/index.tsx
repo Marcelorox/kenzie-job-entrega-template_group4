@@ -13,7 +13,7 @@ if (!jobs.length) {
     <p>Não ha vagas disponíveis no momento</p>
     )
 }
-
+console.log(jobs)
   return (
     <>
       <section>
@@ -22,7 +22,9 @@ if (!jobs.length) {
             < OpeningJobsCard 
               key={job.id}
               position={job.position}
-              description={job.description}  
+              description={job.description} 
+              jobApplyID={job.id} 
+              userApplyID={job.userId} 
             /> )
           )}
         </StyledUl>
