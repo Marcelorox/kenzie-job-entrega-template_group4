@@ -33,14 +33,14 @@ export const OpeningJobsCard = ({
 
   const{isOpen,setIsOpen, setApplyJob,applyJob} = useContext(UserContext)
 
-  console.log(user)
  const handdleShowJob = () =>{
     setShowJob(!showJob);
   } 
 
 const applyClickButton = () =>{
   setIsOpen(true)
-  setApplyJob({"userId":user.id,"jobId": jobApplyID,"position":position})
+  setApplyJob({"userId":user.id,"jobId": jobApplyID,"position":position, "empresa":user.name})
+  console.log(setApplyJob)
 }
   return (
     <StyledLi className="cardVaga">

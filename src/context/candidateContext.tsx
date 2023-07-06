@@ -74,6 +74,7 @@ interface IApplyJob {
   jobId: number;
   userId: number;
   position: string;
+  empresa: string;
 }
 interface IAdminLoginResponse {
   accessToken: string;
@@ -118,9 +119,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
           _expand:"user"
         }
       });
-      console.log(data)
       setJobs(data);
-      console.log(data)
     } catch (error) {
       console.log(error);
     }

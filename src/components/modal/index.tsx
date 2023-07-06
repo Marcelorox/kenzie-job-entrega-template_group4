@@ -55,7 +55,7 @@ export const Modal = () => {
             <p>
               Você está se candidatando para <span>{applyJob?.position}</span>{" "}
               na
-              <span> {``}Kenzie Academy Brasil</span>
+              <span> {applyJob?.empresa}</span>
             </p>
           </div>
         </div>

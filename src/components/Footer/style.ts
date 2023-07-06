@@ -6,8 +6,9 @@ export const StyledFooter = styled.footer`
   padding: 1rem;
   background: black;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 
   .footer_containner {
     width: 100%;
@@ -21,17 +22,16 @@ export const StyledFooter = styled.footer`
 
   p {
     color: white;
+    font-size: 0.9rem;
   }
 
-
   @media (min-width: 600px) {
-    
-  .footer_containner {
-    justify-content: space-between;
-    flex-direction: row;
+    .footer_containner {
+      justify-content: space-between;
+      flex-direction: row;
     }
-    div{
-
+    p {
+      font-size: 1.125rem;
     }
   }
 `;
