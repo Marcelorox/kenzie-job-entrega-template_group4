@@ -1,9 +1,10 @@
-// import { useContext } from "react";
-// import { UserContext } from "../context/UserContext";
-// import { Outlet, Navigate } from "react-router";
+import { useContext } from "react";
+import { Outlet, Navigate } from "react-router";
+import { UserContext } from "../context/candidateContext";
 
-// export function ProtectedRoutes (){
-//     const { user } = useContext(UserContext)
+export function ProtectedRoutes (){
+    const { admin } = useContext(UserContext)
+    
 
-//     return user ? <Outlet/> : <Navigate to="/"/>
-// }
+    return admin ? <Outlet/> : <Navigate to="/"/>
+}
