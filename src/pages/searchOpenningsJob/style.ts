@@ -6,7 +6,7 @@ export const StyledSection = styled.section`
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  height: 79vh;
+  height: 80vh;
   font-family: var(--Font-primary);
 
   h1 {

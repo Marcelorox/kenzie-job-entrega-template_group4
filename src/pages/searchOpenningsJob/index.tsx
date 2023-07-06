@@ -14,13 +14,13 @@ export interface IFilteredJobs {
   userId: number;
 }
 
-interface InputProps {
+/*interface InputProps {
   type: string;
   label: string;
   placeholder: string;
   value: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-}
+}*/
 
 export const SearchJobOpennings = () => {
   const { jobs } = useContext(UserContext);

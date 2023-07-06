@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 export const StyleContainerLoginPage = styled.div`
     width: 100%;
     max-width: 1328px;
+    min-height: 80vh;
     margin: auto;
     padding: 1rem;
     display: flex;
