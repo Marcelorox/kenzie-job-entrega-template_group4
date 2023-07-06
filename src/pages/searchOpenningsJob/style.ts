@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
-export const StyledSection = styled.section`
+export const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   width: 100%;
+  max-width: 1328px;
   height: 80vh;
   font-family: var(--Font-primary);
 
@@ -22,19 +23,28 @@ export const StyledSection = styled.section`
     line-height: 36px;
   }
 
-  .divInput{
-    position: relative;
+  form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 39.25rem;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .divInput{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 560px;
     gap: 1rem;
   }
 
   input {
     display: flex;
-    border: 1px solid blue;
-    width: 75%;
+    flex-direction: column;
+    width: 86%;
     max-width: 542px;
     height: 66px;
     top: 278px;
@@ -44,32 +54,80 @@ export const StyledSection = styled.section`
   }
 
   input::placeholder {
-    color: rgba(16, 17, 26, 0.5);;
+    color: rgba(16, 17, 26, 0.5);
     font-size: 1rem;
     font-weight: 400;
     line-height: 19.5px;
   }
 
-  label, span {
+  label,span  {
     font-size: 1rem;
     font-weight: var(--weight-bold);
     color: var(--black);
     line-height: 20px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    width: 80vw;
+    max-height: 17rem;
+    overflow: auto;
+  }
+
+  .emptyList {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 40px;
+    width: 80vw;
+    max-height: 17rem;
+    overflow: auto;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 2rem;
+  }
+
+  @media(max-width: 600px) {
+    .divInput{
+      flex-direction: column;
+      padding: 1rem;
+      height: 120px;
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+    font-weight:400;
+    font-size: var(--size-title3);
+    line-height: 22px;
+  }
   }
 `
 
 export const StyledButton = styled.button`
     display: flex;
     background-color: black;
-    position: absolute;
     align-items: center;
     justify-content: center;
     width: 66px;
     height: 66px;
-    right: 0;
-    bottom: 0;
     border-radius: 50%;
     padding: 5px;
     background-color: var(--blue);
     border: 1px solid var(--blue);
+
+    @media(max-width: 600px) {
+      width: 44px;
+      height: 44px;
+    }
 `
