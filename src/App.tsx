@@ -1,19 +1,18 @@
-import { LoginPage } from "./pages/loginPage";
+
 import { GlobalStyle } from "./style/GlobalStyle";
-// import { RegisterPage } from "./pages/registerPage";
-//import { HomePage } from "./pages/homePage";
-//import { RegisterPage } from "./pages/registerPage";
-//import { HomePage } from "./pages/homePage";
+// import { FormRegister } from "./components/forms/register/FormRegister"
+import { SearchJobOpennings } from "./pages/searchOpenningsJob";
+import { LoginPage } from "./pages/loginPage";
+
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      {/*<HomePage />*/}
-      {/* <RegisterPage /> */}
-      {/* <LoginPage /> */}
-      {/*<HomePage /> */}
-      {/*<RegisterPage />*/}
+      <SearchJobOpennings /> 
+      {/* <FormRegister />   */}
+
+      <HomePage /> 
     </>
   )
 }
