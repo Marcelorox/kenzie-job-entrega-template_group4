@@ -59,9 +59,11 @@ export const StyleContainerForm =styled.div`
 
             .submit_register{
                 height: 40px;
-                width: 40%;
+                width: 50%;
             }
         }
     }
+
+
 
 `

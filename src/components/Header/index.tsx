@@ -4,7 +4,6 @@ import img from "../../assets/img/jobs.svg"
 import lupa from "../../assets/img/lupa.svg"
 import { StyledHeader } from "./style";
 
-
 export function Header() {
   return (
     <StyledHeader>
