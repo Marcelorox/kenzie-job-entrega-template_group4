@@ -11,7 +11,6 @@ if (!jobs.length) {
     <p>Não ha vagas disponíveis no momento</p>
     )
 }
-console.log(jobs)
   return (
     <>
       <section>
@@ -22,7 +21,7 @@ console.log(jobs)
               position={job.position}
               description={job.description} 
               jobApplyID={job.id} 
-              userApplyID={job.userId} 
+              user={job.user} 
             /> )
           )}
         </StyledUl>

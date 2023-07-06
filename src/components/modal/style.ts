@@ -10,41 +10,54 @@ export const StyledDiv = styled.div`
   background-color: rgba(0, 0, 0, 0.25);
   inset: 0;
   border: none;
+  z-index: 1;
 
   .modalContainner {
     position: absolute;
     width: 100%;
-    max-height: 400px;
-    max-width: 370px;
+    min-height: 550px;
+    max-width: 530px;
     border-radius: 0px 0px 5px 5px;
-    background-color: #212529;
-  }
-  .form_containner {
+    background-color: white;
     padding: 1rem;
   }
 
-  .closeModal {
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .closeModal_containner {
+
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 1rem;
-    justify-content: space-between;
-    align-items: center;
-    height: 54px;
-    background: #343b41;
-    color: white;
+    justify-content: flex-start;
+    min-height: 90px;
+    background: white;
+    color: blue;
+  
   }
-  .closeX {
-    cursor: pointer;
-    color: #868e96;
+  img {
+      width: 20px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+  .closeModal {
+    position: relative;
   }
-  button {
-    width: 100%;
-    max-width: 400px;
+ 
+  .buttonApply{
+    width: 50%;
     height: 60px;
-    background: #ff577f;
-    border: 1px solid #ff577f;
-    border-radius: 8px;
+    background: var(--blue);
+    border: 1px solid var(--blue);
+    border-radius: 40px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -59,47 +72,42 @@ export const StyledDiv = styled.div`
     line-height: 19px;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    align-self: flex-end;
+  }
+  h2 {
+    color: var(--blue);
+    font-size: 30px;
   }
 
   p {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    color: #868e96;
-  }
-  h5{
-
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    color:yellow;
-  }
-
-
-  select {
-    background: #343b41;
-    border: 1.2182px solid #343b41;
-    border-radius: 4px;
-    padding: 0px 16.2426px;
-    width: 100%;
-    height: 45px;
     font-family: "Inter";
-    font-style: normal;
     font-weight: 400;
-    font-size: 16.2426px;
-    line-height: 26px;
-    color: #868e96;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    font-size: 18px;
+    line-height: 36px;
+    color: black;
+  }
+  span {
+    font-family: inter;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 36px;
+    color: black;
   }
 
-  input {
-    color: #868e96;
-    background: #343b41;
+  .inputModal{
+    color: var(--inputColor);
+    background: white;
+    border: 1px solid var(--blue);
     margin-top: 1rem;
     margin-bottom: 1rem;
+    height: 66px;
+    border-radius: 50px;
+    padding: 2rem;
   }
-  input:hover {
-    border: 1.2182px solid #f8f9fa;
+ 
+  @media (min-width: 600px) {
+    h2{
+      font-size: var(--size-title2);
+    }
   }
-
 `;
-

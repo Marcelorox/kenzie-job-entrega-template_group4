@@ -14,6 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     --white: #FFFFFF;
     --lightblue: #F9F9FF;
     --blue: #8490FF;
+    --inputColor:#10111A;
 
     --size-title1: clamp(1.875rem, 10vw, 4rem);
     --size-title2: 2.75rem;

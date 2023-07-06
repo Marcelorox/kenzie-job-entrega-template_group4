@@ -7,31 +7,40 @@ import { UserContext } from "../../../context/candidateContext";
 import { useContext} from "react";
 import { func } from "prop-types";
 
+interface IUsers {
+  email: string;
+  password: string;
+  name: string;
+  age: number;
+  id: number;
+}
 interface IOpeningJobsCardProps {
   position: string;
   description: string;
   jobApplyID:number;
-  userApplyID:number
+  user:IUsers
 }
 
 export const OpeningJobsCard = ({
   position,
   description,
   jobApplyID,
-  userApplyID
+  user
 }: IOpeningJobsCardProps) => {
 
 
   const [showJob, setShowJob] = useState(false);
 
-  const{isOpen,setIsOpen, setApliJob} = useContext(UserContext)
+  const{isOpen,setIsOpen, setApplyJob,applyJob} = useContext(UserContext)
 
+  console.log(user)
  const handdleShowJob = () =>{
     setShowJob(!showJob);
   } 
+
 const applyClickButton = () =>{
   setIsOpen(true)
-  setApliJob({"userID":userApplyID,"id": jobApplyID})
+  setApplyJob({"userId":user.id,"jobId": jobApplyID,"position":position})
 }
   return (
     <StyledLi className="cardVaga">
@@ -44,10 +53,10 @@ const applyClickButton = () =>{
               <img src={add} className="addIcon" alt="add icons" />
             )}
             <div className="cardVaga_position">
-              <StyledLabel>Kenzie Academy Brasil</StyledLabel>
+              <StyledLabel>{user.name}</StyledLabel>
               <StyledTitleThree>{position}</StyledTitleThree>
             </div>
-            <button onClick={() => applyClickButton()}>Candidatar-se</button>
+            <button className="buttonCard"onClick={() => applyClickButton()}>Candidatar-se</button>
           </div>
         </div>
 
