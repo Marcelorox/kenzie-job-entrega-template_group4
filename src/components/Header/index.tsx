@@ -4,7 +4,6 @@ import lupa from "../../assets/img/lupa.svg";
 import { StyledHeader } from "./style";
 import { Link } from "react-router-dom";
 
-https://meet.google.com/xoo-xtzx-ccz
 
  export function Header() {
 
