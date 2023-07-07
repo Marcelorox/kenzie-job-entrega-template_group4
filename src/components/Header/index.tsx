@@ -4,8 +4,7 @@ import lupa from "../../assets/img/lupa.svg";
 import { StyledHeader } from "./style";
 import { Link } from "react-router-dom";
 
-
- export const Header = () => {
+export const Header = () => {
 
   return (
     <StyledHeader>
@@ -16,7 +15,7 @@ import { Link } from "react-router-dom";
         <Link to={"/entrar"} className="span_containner">
           <StyledMenu>acesso empresa</StyledMenu>
         </Link>
-        <button className="headerButton">Confira nossas vagas</button>
+        <button onClick={scrollToSection} className="headerButton">Confira nossas vagas</button>
         <Link to={"/pesquisa"}>
           <img src={lupa} className="lupa" alt="imagem lupa" />
         </Link>

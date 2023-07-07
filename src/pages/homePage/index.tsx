@@ -22,8 +22,6 @@ export const HomePage = () => {
     }
   };
 
- 
-
   return (
     <>
       {isOpen ? <Modal /> : null}

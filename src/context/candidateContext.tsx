@@ -127,8 +127,6 @@ export const UserContext = createContext<UserContextProps>(
     }
   };
 
-
-
   useEffect(() => {
     fetchJobs();
   }, []);
