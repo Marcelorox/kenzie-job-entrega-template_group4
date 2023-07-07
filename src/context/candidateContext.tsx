@@ -62,9 +62,9 @@ interface IAdmin {
 }
 
 interface IAdminRegister {
-  email: string;
-  password: string;
-  name: string;
+  "email": string;
+  "password": string;
+  "name": string;
 }
 
 interface IAdminLogin {
@@ -138,7 +138,6 @@ export const UserContext = createContext<UserContextProps>(
     try {
       const { data }: ApplicationsResponse =
         await api.post<ApplicationsRequest>("applications", formData);
-      console.log("candidatura ok");
       setIsOpen(false);
     } catch (error) {
       console.log("falha na candidatura");
@@ -146,11 +145,11 @@ export const UserContext = createContext<UserContextProps>(
   };
 
   const companyRegister = async (formData: IAdminRegister) => {
-
     try {
       await api.post("users", formData);
+      toast.success('Cadastrado com sucesso')
     } catch (error) {
-      console.log(error);
+      toast.error('Ops! algo deu errado')
     }
   };
 
@@ -167,7 +166,6 @@ export const UserContext = createContext<UserContextProps>(
           toast.error("Senha ou E-mail incorretos")
       }
   }
-
   const value: UserContextProps = {
     jobs,
     navigate,

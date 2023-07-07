@@ -78,4 +78,7 @@ export const StyleContainerForm = styled.div`
       }
     }
   }
+  @media (min-width: 700px) {
+    width: 80%;
+  }
 `;
