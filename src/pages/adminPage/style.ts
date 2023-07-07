@@ -8,7 +8,6 @@ export const StyleContainerAdminPage = styled.div`
   margin: auto;
 
   .info__company{
-    border: 1px solid red;
     margin-bottom: 20px;
 
     h1{
@@ -34,11 +33,13 @@ export const StyleContainerAdminPage = styled.div`
           color: var(--blue);
         }
   }
+  @media (min-width: 700px) {
+    width: 80%;
 
-  @media (min-width: 600px){
-      .buttons_admin{
-        justify-content: flex-start;
-        gap: 40px;
-      }
+    .buttons_admin{
+      justify-content:  flex-start;
+      gap: 20px;
+    }
+
   }
 `

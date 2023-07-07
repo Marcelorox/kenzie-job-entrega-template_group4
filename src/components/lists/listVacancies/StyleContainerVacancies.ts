@@ -33,6 +33,13 @@ export const StyleContainerVacancies = styled.div`
     }
   }
 
+  ul{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 30px
+  }
+
 
   @media (min-width: 665px) {
     .add_vacancies {
@@ -48,8 +55,8 @@ export const StyleContainerVacancies = styled.div`
         border-radius: 30px;
 
         img {
-          height: 50px;
-          width: 50px;
+          height: 40px;
+          width: 40px;
         }
 
         p {
