@@ -179,6 +179,8 @@ export const UserContext = createContext<UserContextProps>(
     isOpen,
     applyJob,
     setApplyJob,
+    // users,
+    // setUsers
   };
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;

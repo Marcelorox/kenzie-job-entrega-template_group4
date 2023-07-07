@@ -25,10 +25,19 @@ export const AdminPage = () => {
             <button onClick={() => setOptionRender("vacancies")}>
               Minhas vagas
             </button>
-            <button value="application"onClick={() => setOptionRender("application")}>Minhas candidaturas</button>
+            <button
+              value="application"
+              onClick={() => setOptionRender("application")}
+            >
+              Minhas candidaturas
+            </button>
           </div>
           <section>
-            { optionRender ==="vacancies"? <ListVacancies />: <p>Candidaturas</p>}
+            {optionRender === "vacancies" ? (
+              <ListVacancies />
+            ) : (
+              <p>Candidaturas</p>
+            )}
           </section>
         </StyleContainerAdminPage>
       </main>

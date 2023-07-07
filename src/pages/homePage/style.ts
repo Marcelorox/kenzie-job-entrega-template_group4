@@ -103,14 +103,14 @@ export const Styledsection = styled.section`
     margin-top: 1rem;
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 700px) {
     h1 {
       font-size: 4rem;
       line-height: 4.875rem;
     }
-  }
-
-  @media (min-width: 1300px) {
+    .homeJobs_fraseInicial, .homeJobs_aboutUsConatainner, .homeJobs_listaDeVagas--Containner{
+      width: 80%;
+    }
     .homeJobs_aboutUsConatainner {
       flex-direction: row;
       justify-content: space-between;

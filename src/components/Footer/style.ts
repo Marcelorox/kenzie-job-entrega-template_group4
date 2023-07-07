@@ -28,6 +28,7 @@ export const StyledFooter = styled.footer`
   @media (min-width: 600px) {
     .footer_containner {
       justify-content: space-between;
+      width: 80%;
       flex-direction: row;
     }
     p {

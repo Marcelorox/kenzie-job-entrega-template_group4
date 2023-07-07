@@ -42,6 +42,7 @@ export const StyledHeader = styled.header`
 
   @media (min-width: 600px) {
     .header_containner {
+      width: 80%;
       height: 55px;
     }
 

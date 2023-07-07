@@ -4,19 +4,16 @@ import { Styledsection } from "./style";
 import equipe from "../../assets/img/equipe.svg";
 import { StyledParagraph } from "../../style/typography";
 import { OpeningJobsList } from "../../components/openingJobs/openingJobsList";
-import { useContext} from "react";
+import { useContext } from "react";
 import { UserContext } from "../../context/candidateContext";
 import { Modal } from "../../components/modal/index.jsx";
 
-
-
 export function HomePage() {
-
-  const{isOpen} = useContext(UserContext)
+  const { isOpen } = useContext(UserContext);
 
   return (
     <>
-    {isOpen? <Modal/> : null}
+      {isOpen ? <Modal /> : null}
       <Header />
       <Styledsection className="homeJobs_containner">
         <div className="homeJobs_caixa">
@@ -43,8 +40,8 @@ export function HomePage() {
         </div>
         <div className="homeJobs_listaDeVagas">
           <div className="homeJobs_listaDeVagas--Containner">
-          <h1>Confira Nossas vagas</h1>
-          < OpeningJobsList/>
+            <h1>Confira Nossas vagas</h1>
+            <OpeningJobsList />
           </div>
         </div>
       </Styledsection>
@@ -52,4 +49,3 @@ export function HomePage() {
     </>
   );
 }
-

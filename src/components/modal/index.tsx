@@ -35,7 +35,6 @@ export const Modal = () => {
     console.log(data);
     const userJobId = { userId: applyJob?.userId, jobId: applyJob?.jobId };
     const detailsApplyJobs = { ...data, ...userJobId };
-    // console.log(detailsApplyJobs)
     fetchApplications(detailsApplyJobs);
     reset();
   };
