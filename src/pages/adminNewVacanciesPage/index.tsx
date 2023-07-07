@@ -64,9 +64,8 @@ export const AdminNewVacanciesPage = () => {
                 error={errors.sallary}
                 {...register("sallary")}
               />
-              <Input
+              <textarea
                 className="inputCriarVagaDescrição"
-                type="text"
                 placeholder="Descrição"
                 error={errors.description}
                 {...register("description")}

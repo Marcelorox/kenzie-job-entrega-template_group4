@@ -57,14 +57,31 @@ h5{
   }
 
   .inputCriarVagaDescrição{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
     height: 236px;
     margin-bottom:1rem;
     padding:1rem;
     border: 1px solid var(--blue);
     border-radius:40px;
+    font-family:var(--Font-primary);
   }
+
+  .inputCriarVaga, .inputCriarVagaDescrição {
+    font-weight:700;
+    font-size: var(--size-menu);
+    line-height: 19.5px;
+    color: rgba(16, 17, 26, 0.5);
+  }
+
   .buttonCriaVaga{
-    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 55%;
+    max-width: 194px;
     align-self:flex-end;
     border: 1px solid var(--blue);
     border-radius:40px;
@@ -77,6 +94,7 @@ h5{
     line-height: 21px;
     text-align: center;
   }
+  
   @media (min-width: 600px) {
     .buttonCriaVaga{
         width: 40%;
@@ -84,6 +102,5 @@ h5{
     h1{
         font-size:65px;
     }
-}
-
+  }
 `;
