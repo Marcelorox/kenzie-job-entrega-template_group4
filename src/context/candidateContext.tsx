@@ -139,8 +139,9 @@ export const UserContext = createContext<UserContextProps>(
       const { data }: ApplicationsResponse =
         await api.post<ApplicationsRequest>("applications", formData);
       setIsOpen(false);
+      toast.success('Candidatura realizada com sucesso')
     } catch (error) {
-      console.log("falha na candidatura");
+      toast.error('Ops! algo deu errado')
     }
   };
 
@@ -159,10 +160,11 @@ export const UserContext = createContext<UserContextProps>(
         const { data } = await api.post<IAdminLoginResponse>("login", formData);
           localStorage.setItem("@TOKEN", data.accessToken);
           localStorage.setItem("@ADMINID", String(data.user.id));
+          localStorage.setItem("@ADMINNAME", String(data.user.name));
           setAdmin(data.user);
           navigate("/dashboard")
       } catch (error) {
-          console.log(error);
+          // console.log(error);
           toast.error("Senha ou E-mail incorretos")
       }
   }

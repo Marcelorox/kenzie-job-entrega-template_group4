@@ -51,11 +51,11 @@ export const Modal = () => {
               className="closeX"
               onClick={() => setIsOpen(false)}
             />
-            <p>
+            <h5>
               Você está se candidatando para <span>{applyJob?.position}</span>{" "}
               na
               <span> {applyJob?.empresa}</span>
-            </p>
+            </h5>
           </div>
         </div>
 
@@ -65,7 +65,7 @@ export const Modal = () => {
               className="inputModal"
               type="text"
               placeholder="Nome"
-              error={errors.name}
+              error={errors.name} 
               {...register("name")}
             />
             <Input

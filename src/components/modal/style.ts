@@ -79,7 +79,7 @@ export const StyledDiv = styled.div`
     font-size: 30px;
   }
 
-  p {
+  h5 {
     font-family: "Inter";
     font-weight: 400;
     font-size: 18px;

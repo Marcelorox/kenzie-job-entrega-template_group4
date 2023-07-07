@@ -4,12 +4,25 @@ import { Styledsection } from "./style";
 import equipe from "../../assets/img/equipe.svg";
 import { StyledParagraph } from "../../style/typography";
 import { OpeningJobsList } from "../../components/openingJobs/openingJobsList";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { UserContext } from "../../context/candidateContext";
 import { Modal } from "../../components/modal/index.jsx";
 
+
+// type MyFunctionType= () => void;
+
 export function HomePage() {
   const { isOpen } = useContext(UserContext);
+
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  // const scrollToSection:MyFunctionType= () => {
+  //   if (sectionRef.current) {
+  //     sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // };
+
+ 
 
   return (
     <>
@@ -38,7 +51,7 @@ export function HomePage() {
             </div>
           </div>
         </div>
-        <div className="homeJobs_listaDeVagas">
+        <div className="homeJobs_listaDeVagas" ref={sectionRef}>
           <div className="homeJobs_listaDeVagas--Containner">
             <h1>Confira Nossas vagas</h1>
             <OpeningJobsList />

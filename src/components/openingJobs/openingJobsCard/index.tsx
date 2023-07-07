@@ -14,6 +14,7 @@ export interface IUsers {
   age: number;
   id: number;
 }
+
 interface IOpeningJobsCardProps {
   position: string;
   description: string;
