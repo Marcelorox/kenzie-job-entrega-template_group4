@@ -17,6 +17,7 @@ interface IdetailsApplyJobs {
   jobId: number;
 }
 export const Modal = () => {
+  
   const { setIsOpen, fetchApplications, applyJob } = useContext(UserContext);
 
   const {

@@ -7,6 +7,8 @@ import { SearchJobOpennings } from "../pages/searchOpenningsJob";
 import { ProtectedRoutes } from "./privateRoutes";
 import { AdminProvider } from "../context/adminContext";
 import { AdminPage } from "../pages/adminPage";
+import { AdminNewVacanciesPage } from "../pages/adminNewVacanciesPage";
+
 //import { AdminContext } from "../context/adminContext"
 
 export const RoutesMain = () => {
@@ -23,12 +25,10 @@ export const RoutesMain = () => {
         <Route
           index
           element={
-            <AdminProvider>
               <AdminPage />
-            </AdminProvider>
           }
         />
-        {/*<Route element={}/>*/}
+        <Route  path="/dashboard/criarVaga" element={<AdminNewVacanciesPage/>}/>
       </Route>
     </Routes>
   );

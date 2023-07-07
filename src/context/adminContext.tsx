@@ -2,6 +2,7 @@ import { createContext, useState } from "react"
 import { api } from "../api/api";
 import { AxiosResponse } from "axios";
 import { useNavigate, NavigateFunction } from "react-router-dom";
+import { toast } from "react-toastify";
 
 
 interface IAdminProviderProps{
@@ -101,10 +102,14 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
     }
     
     const addJobs = async (formData: IAdminAddJobs) => {
+       
         try {
             await api.post<IAdminAddJobsResponse>("jobs", formData, { headers: { Authorization : `Bearer ${token}` }});
+            console.log("deu certo")
+            toast.success('Cadastrado de vaga com sucesso')
         } catch (error) {
             console.log(error);
+            toast.error('Ops! algo deu errado')
         }
     }
     
