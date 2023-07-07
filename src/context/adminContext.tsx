@@ -26,6 +26,7 @@ interface Candidates {
 }
 
 interface IAdminAddJobs {
+    "userId":number,
     "position": string,
     "sallary": string,
     "description": string, 
