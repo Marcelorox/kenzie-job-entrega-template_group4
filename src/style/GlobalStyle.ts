@@ -41,7 +41,6 @@ export const GlobalStyle = createGlobalStyle`
 
     input{
         background-color: transparent;
-        /* border: none; */
     }
 
     a{

@@ -4,7 +4,7 @@ import { StyleAlertSchema } from "./StyleAlertSchema";
 interface IPropsInput extends HTMLAttributes<HTMLInputElement>{
     type: string;
     label?: string;
-    error: any;
+    error?: any;
     value?: string;
 }
 
