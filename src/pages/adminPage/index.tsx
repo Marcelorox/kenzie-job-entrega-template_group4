@@ -5,6 +5,7 @@ import { StyleContainerAdminPage } from "./style";
 import { StyledParagraph, StyledTitleOne } from "../../style/typography";
 import { useState } from "react";
 import { ListVacancies } from "../../components/lists/listVacancies/ListVacancies";
+import { AdminPageCandidateList } from "../adminPageCandidateList";
 
 export const AdminPage = () => {
   const { admin } = useContext(UserContext);
@@ -36,7 +37,7 @@ export const AdminPage = () => {
             {optionRender === "vacancies" ? (
               <ListVacancies />
             ) : (
-              <p>Candidaturas</p>
+              <AdminPageCandidateList/>
             )}
           </section>
         </StyleContainerAdminPage>
