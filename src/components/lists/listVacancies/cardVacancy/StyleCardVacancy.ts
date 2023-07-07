@@ -20,4 +20,8 @@ export const StyleCardVacancy = styled.li`
         gap: 15px
     }
 
+    .container_delete{
+        cursor: pointer;
+    }
+
  `

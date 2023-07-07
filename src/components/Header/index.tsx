@@ -5,7 +5,7 @@ import { StyledHeader } from "./style";
 import { Link } from "react-router-dom";
 
 
- export function Header() {
+ export const Header = () => {
 
   return (
     <StyledHeader>
