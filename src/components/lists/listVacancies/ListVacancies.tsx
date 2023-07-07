@@ -13,7 +13,7 @@ export const ListVacancies = () => {
     <StyleContainerVacancies>
       <div>
         <StyledTitleOne>Minhas vagas</StyledTitleOne>
-        <Link to={"alguma pagina"}>
+        <Link to="/dashboard/criarVaga">
           <img src={add} alt="Adiciona nova vaga" />
           <StyledParagraph>Criar vaga</StyledParagraph>
         </Link>
