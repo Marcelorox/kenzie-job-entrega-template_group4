@@ -2,7 +2,6 @@ import logo from "../../../assets/img/jobs.svg";
 import { AdminContext } from "../../../context/adminContext";
 import { StyleContainerHeaderPrivate } from "./style";
 import { useContext } from "react";
-import KE from "../../../assets/img/KE.png";
 
 
 

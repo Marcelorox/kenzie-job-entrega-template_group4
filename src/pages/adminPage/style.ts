@@ -31,4 +31,7 @@ export const StyleContainerAdminPage = styled.div`
           color: var(--blue);
         }
   }
+  @media (min-width: 700px) {
+    width: 80%;
+  }
 `
