@@ -7,7 +7,6 @@ import { useState } from "react";
 import { ListVacancies } from "../../components/lists/listVacancies/ListVacancies";
 
 export const AdminPage = () => {
-  const { admin } = useContext(UserContext);
   const [optionRender, setOptionRender] = useState("");
   const [nameCompany, setNameCompany] = useState(true);
   const name = localStorage.getItem("@ADMINNAME")
