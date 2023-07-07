@@ -1,6 +1,5 @@
-import { useContext } from "react";
+//import { useContext } from "react";
 import { HeaderPrivate } from "../../components/Header/headerPrivate";
-import { UserContext } from "../../context/candidateContext";
 import { StyleContainerAdminPage } from "./style";
 import { StyledParagraph, StyledTitleOne } from "../../style/typography";
 import { useState } from "react";
