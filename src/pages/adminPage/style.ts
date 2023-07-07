@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const StyleContainerAdminPage = styled.div`
   width: 100%;
   max-width: 1328px;
@@ -13,6 +14,8 @@ export const StyleContainerAdminPage = styled.div`
     h1{
       color: var(--blue);
     }
+
+
   }
 
   .buttons_admin{
@@ -30,5 +33,12 @@ export const StyleContainerAdminPage = styled.div`
     button:focus{
           color: var(--blue);
         }
+  }
+
+  @media (min-width: 600px){
+      .buttons_admin{
+        justify-content: flex-start;
+        gap: 40px;
+      }
   }
 `

@@ -11,7 +11,7 @@ export const ListVacancies = () => {
 
   return (
     <StyleContainerVacancies>
-      <div>
+      <div className="add_vacancies">
         <StyledTitleOne>Minhas vagas</StyledTitleOne>
         <Link to={"alguma pagina"}>
           <img src={add} alt="Adiciona nova vaga" />
