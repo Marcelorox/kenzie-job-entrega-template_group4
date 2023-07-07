@@ -10,6 +10,7 @@ import criar from "../../assets/img/criar.svg";
 import { useContext } from "react";
 import { AdminContext } from "../../context/adminContext";
 import { Styledsection } from "./style";
+import { Link } from "react-router-dom";
 
 export const AdminNewVacanciesPage = () => {
   const { addJobs } = useContext(AdminContext);
@@ -34,7 +35,9 @@ export const AdminNewVacanciesPage = () => {
       <Styledsection>
         <div className="sectionContainner">
           <div className="voltar">
-            <img className="imgSeta" src={seta} alt="seta voltar" />
+            <Link to={"/dashboard"}>
+              <img className="imgSeta" src={seta} alt="seta voltar" />
+            </Link>
             <h5>voltar</h5>
           </div>
           <section className="formSaction">
@@ -62,8 +65,8 @@ export const AdminNewVacanciesPage = () => {
                 {...register("description")}
               />
               <button type="submit" className="buttonCriaVaga">
-                  <img src={criar} alt="criar vaga" />
-                  <img src={textoCriarVagas} alt=" texto criar vaga" />
+                <img src={criar} alt="criar vaga" />
+                <img src={textoCriarVagas} alt=" texto criar vaga" />
               </button>
             </form>
           </section>

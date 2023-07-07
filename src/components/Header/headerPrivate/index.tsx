@@ -2,20 +2,14 @@ import logo from "../../../assets/img/jobs.svg";
 import { AdminContext } from "../../../context/adminContext";
 import { StyleContainerHeaderPrivate } from "./style";
 import { useContext } from "react";
-import KE from "../../../assets/img/KE.png";
-
-
 
 export const HeaderPrivate = () => {
   const { handleLogout } = useContext(AdminContext);
-  console.log(handleLogout);
 
 const companyName = window.localStorage.getItem("@ADMINNAME")
 const companyNameSlice = companyName?.slice(0,2)
 const companyNameUpper = companyNameSlice?.toUpperCase()
 
-
-console.log(companyNameUpper)
  
   return (
     <header>
