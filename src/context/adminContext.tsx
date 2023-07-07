@@ -4,7 +4,6 @@ import { AxiosResponse } from "axios";
 import { useNavigate, NavigateFunction } from "react-router-dom";
 import { toast } from "react-toastify";
 
-
 interface IAdminProviderProps{
     children: React.ReactNode;
 }
@@ -61,6 +60,7 @@ interface AdminContextProps {
     navigate: NavigateFunction;
     updateJobs: (formData: IAdminUpdateJobs, jobId: number) => void;
     deleteJobs: (jobId: number) => void;
+    candidateList: (companyID: number) => Promise<void>;
     handleLogout: () => void;
 }
 
@@ -107,7 +107,7 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
        
         try {
             await api.post<IAdminAddJobsResponse>("jobs", formData, { headers: { Authorization : `Bearer ${token}` }});
-            console.log("deu certo")
+            // console.log("deu certo")
             toast.success('Cadastrado de vaga com sucesso')
         } catch (error) {
             console.log(error);
@@ -131,6 +131,16 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
         }
     }
     
+    const candidateList = async (companyID: number) => {
+        try {
+            const response = await api.get(`jobs/${companyID}/applications`, { headers: { Authorization : `Bearer ${token}` }})
+            setCandidates(response.data)
+            console.log("deu certo")
+        } catch (error) {
+            console.log(error) 
+        }
+    }
+
     const handleLogout = () => {
         localStorage.clear()
         setSpecificJobs([])
@@ -145,6 +155,7 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
         addJobs,
         updateJobs,
         deleteJobs,
+        candidateList
     }
     
     return(
