@@ -1,10 +1,8 @@
-import { useContext } from "react";
 import { Outlet, Navigate } from "react-router";
-import { UserContext } from "../context/candidateContext";
 
 export function ProtectedRoutes (){
-    const { admin } = useContext(UserContext)
+    const localData : string | null = localStorage.getItem('@TOKEN')
     
 
-    return admin ? <Outlet/> : <Navigate to="/"/>
+    return localData ? <Outlet/> : <Navigate to="/"/>
 }
