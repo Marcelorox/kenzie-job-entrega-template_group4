@@ -2,6 +2,7 @@ import { GlobalStyle } from "./style/GlobalStyle";
 import { RoutesMain } from "./routes";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { UpdateJobs } from "./pages/adminPage/update.tsx";
 
 function App() {
   return (

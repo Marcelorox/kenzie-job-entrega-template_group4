@@ -13,6 +13,7 @@ export const StyleContainerHeaderPrivate = styled.div`
         gap: 10px;
         align-items: center;
     }
+
     
     .logo_name{
         background-color: var(--blue);
@@ -40,5 +41,8 @@ export const StyleContainerHeaderPrivate = styled.div`
         font-family: var(--Font-primary);
         font-size:17px;
         font-weight:400;
+    }
+    @media (min-width: 700px) {
+        width: 80%;
     }
 `
