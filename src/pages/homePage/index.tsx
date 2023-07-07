@@ -16,6 +16,7 @@ export function HomePage() {
 
   const sectionRef = useRef<HTMLDivElement>(null);
 
+  // Função de rolagem de tela
   // const scrollToSection:MyFunctionType= () => {
   //   if (sectionRef.current) {
   //     sectionRef.current.scrollIntoView({ behavior: 'smooth' });
