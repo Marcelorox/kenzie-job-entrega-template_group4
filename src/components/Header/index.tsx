@@ -4,7 +4,9 @@ import lupa from "../../assets/img/lupa.svg";
 import { StyledHeader } from "./style";
 import { Link } from "react-router-dom";
 
-export function Header() {
+
+ export function Header() {
+
   return (
     <StyledHeader>
       <div className="header_containner">

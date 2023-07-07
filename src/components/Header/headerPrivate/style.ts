@@ -25,12 +25,20 @@ export const StyleContainerHeaderPrivate = styled.div`
         align-items: center;
     }
 
-    button{
+    .logout{
         border: 1px solid var(--blue);
         padding: 10px 20px;
         border-radius: 30px;
         background-color: transparent;
         color: var(--blue);
         font-size: var(--size-paragraph);
+    }
+
+    .pieceNameCompany{
+        background-color: var(--blue);
+        color: white;
+        font-family: var(--Font-primary);
+        font-size:17px;
+        font-weight:400;
     }
 `

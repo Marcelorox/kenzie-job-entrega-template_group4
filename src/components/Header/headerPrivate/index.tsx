@@ -4,19 +4,28 @@ import { StyleContainerHeaderPrivate } from "./style";
 import { useContext } from "react";
 import KE from "../../../assets/img/KE.png";
 
+
+
 export const HeaderPrivate = () => {
   const { handleLogout } = useContext(AdminContext);
   console.log(handleLogout);
 
+const companyName = window.localStorage.getItem("@ADMINNAME")
+const companyNameSlice = companyName?.slice(0,2)
+const companyNameUpper = companyNameSlice?.toUpperCase()
+
+
+console.log(companyNameUpper)
+ 
   return (
     <header>
       <StyleContainerHeaderPrivate>
         <img src={logo} alt="Logo Jobs" />
         <div className="container_nav">
           <div className="logo_name">
-            <img src={KE} alt="Inicial da empresa" />
+            <button className="pieceNameCompany">{companyNameUpper}</button>
           </div>
-          <button onClick={() => handleLogout()}>sair</button>
+          <button className="logout" onClick={() => handleLogout()}>sair</button>
         </div>
       </StyleContainerHeaderPrivate>
     </header>
