@@ -4,9 +4,7 @@ import lupa from "../../assets/img/lupa.svg";
 import { StyledHeader } from "./style";
 import { Link } from "react-router-dom";
 
-type MyFunctionType= () => void;
-
- export function Header({scrollToSection}:MyFunctionType) {
+export const Header = () => {
 
   return (
     <StyledHeader>

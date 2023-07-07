@@ -11,7 +11,7 @@ import { Modal } from "../../components/modal/index.jsx";
 
  type MyFunctionType= () => void;
 
-export function HomePage() {
+export const HomePage = () => {
   const { isOpen } = useContext(UserContext);
 
   const sectionRef = useRef<HTMLDivElement>(null);
