@@ -3,9 +3,9 @@ import { styled } from "styled-components";
 export const StyleContainerHeaderPrivate = styled.div`
     width: 100%;
     max-width: 1328px;
-    padding: 1rem;
     margin: auto;
     display: flex;
+    padding: 1rem;
     justify-content: space-between;
 
     .container_nav{
