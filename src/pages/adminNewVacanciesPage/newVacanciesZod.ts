@@ -13,3 +13,4 @@ export const newVacanciesZod = z.object({
 })
 
 export type TNewVacanciesZod = z.infer<typeof  newVacanciesZod>
+

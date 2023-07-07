@@ -22,8 +22,6 @@ export function HomePage() {
     }
   };
 
- 
-
   return (
     <>
       {isOpen ? <Modal /> : null}

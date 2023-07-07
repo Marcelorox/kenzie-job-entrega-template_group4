@@ -8,7 +8,7 @@ import { CardVacancy } from "./cardVacancy/CardVacancy";
 
 export const ListVacancies = () => {
   const { specificJobs } = useContext(AdminContext);
-  console.log(specificJobs, "specificJobs");
+  // console.log(specificJobs, "specificJobs");
 
   return (
     <StyleContainerVacancies>

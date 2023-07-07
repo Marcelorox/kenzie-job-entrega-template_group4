@@ -5,7 +5,6 @@ import { StyledUl } from "./style";
 
 export const OpeningJobsList = () => {
 const{jobs} = useContext(UserContext)
-
 if (!jobs.length) {
     return(
     <p>Não ha vagas disponíveis no momento</p>
