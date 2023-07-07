@@ -9,26 +9,25 @@ import { UserContext } from "../../context/candidateContext";
 import { Modal } from "../../components/modal/index.jsx";
 
 
-// type MyFunctionType= () => void;
+ type MyFunctionType= () => void;
 
 export function HomePage() {
   const { isOpen } = useContext(UserContext);
 
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  // Função de rolagem de tela
-  // const scrollToSection:MyFunctionType= () => {
-  //   if (sectionRef.current) {
-  //     sectionRef.current.scrollIntoView({ behavior: 'smooth' });
-  //   }
-  // };
+  const scrollToSection:MyFunctionType= () => {
+    if (sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
  
 
   return (
     <>
       {isOpen ? <Modal /> : null}
-      <Header />
+      <Header scrollToSection={scrollToSection} />
       <Styledsection className="homeJobs_containner">
         <div className="homeJobs_caixa">
           <div className="homeJobs_fraseInicial">

@@ -9,11 +9,13 @@ interface IAdminProviderProps{
 }
 
 interface Jobs {
-    "userId": number,
-    "id": number,
-    "position": string,
-    "sallary": number,
-    "description": string,
+    data: {
+        "userId": number,
+        "id": number,
+        "position": string,
+        "sallary": number,
+        "description": string,
+    }
 }
 
 interface Candidates {
@@ -140,11 +142,9 @@ export const AdminProvider = ({children}: IAdminProviderProps) => {
     }
 
     const handleLogout = () => {
-        localStorage.removeItem("@TOKEN")
-        localStorage.removeItem("@USERID")
+        localStorage.clear()
         setSpecificJobs([])
         navigate("/")
-        console.log("teste");
     }
     
     const value : AdminContextProps  = {

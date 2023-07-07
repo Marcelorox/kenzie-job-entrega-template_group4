@@ -9,15 +9,9 @@ import { Input } from "../inputs/Inputs";
 import { StyledTitleTwo } from "../../style/typography";
 import close from "../../assets/img/closeModal.svg";
 
-interface IdetailsApplyJobs {
-  name: string;
-  email: string;
-  linkedin: string;
-  userId: number;
-  jobId: number;
-}
+
 export const Modal = () => {
-  
+
   const { setIsOpen, fetchApplications, applyJob } = useContext(UserContext);
 
   const {
