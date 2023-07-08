@@ -31,6 +31,8 @@ export const StyledContainerAdminCandidateList = styled.section`
         justify-content: flex-start;
         gap: 1.5rem;
         margin-top: 3.5em;
+        min-width: 100%;
+        background-color: blue;
     }
 
     .candidateEmail, h2  {
@@ -70,6 +72,13 @@ export const StyledContainerAdminCandidateList = styled.section`
 
     .descriptionCandidateDivNone {
         display: none;
+    }
+
+    @media(max-width: 700px) {
+        h1 {
+        font-size: 2rem;
+        line-height: 2.9063rem;
+    }
     }
     
 `
