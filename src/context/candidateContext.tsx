@@ -90,7 +90,7 @@ interface IIsOpen {
 interface UserContextProps {
   jobs: Job[] | [];
   navigate: NavigateFunction;
-  fetchApplications: (formData: ApplicationsResponse) => void;
+  fetchApplications: (formData: ApplicationsRequest) => void;
   admin: IAdmin | null;
   companyRegister: (formData: IAdminRegister) => void;
   companyLogin: (formData: IAdminLogin) => void;
@@ -132,7 +132,7 @@ export const UserContext = createContext<UserContextProps>(
   }, []);
 
 
-  const fetchApplications = async (formData: ApplicationsResponse) => {
+  const fetchApplications = async (formData: ApplicationsRequest) => {
     try {
       const { data }: ApplicationsResponse =
         await api.post<ApplicationsRequest>("applications", formData);

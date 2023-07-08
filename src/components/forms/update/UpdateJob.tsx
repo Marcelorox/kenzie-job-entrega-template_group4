@@ -10,7 +10,6 @@ import { StyledFormMainContainer, StyleFormUpdatePage } from "./style";
 
 export const UpdateForm = () => {
     const { updateJobs } = useContext(AdminContext)
-
     const {
         register,
         handleSubmit,

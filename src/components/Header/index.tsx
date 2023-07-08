@@ -15,7 +15,7 @@ export const Header = () => {
         <Link to={"/entrar"} className="span_containner">
           <StyledMenu>acesso empresa</StyledMenu>
         </Link>
-        <button onClick={scrollToSection} className="headerButton">Confira nossas vagas</button>
+        <button className="headerButton">Confira nossas vagas</button>
         <Link to={"/pesquisa"}>
           <img src={lupa} className="lupa" alt="imagem lupa" />
         </Link>

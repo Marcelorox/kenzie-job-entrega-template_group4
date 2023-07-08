@@ -3,7 +3,7 @@ import { useContext, useRef } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { UserContext } from "../../context/candidateContext";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { TCandicateForm, candidateFormSchema } from "./zodCandidatura";
+import { TCandicateForm, candidateFormSchema } from "./zodCandidature";
 import { Input } from "../inputs/Inputs";
 import { StyledTitleTwo } from "../../style/typography";
 import close from "../../assets/img/closeModal.svg";
@@ -26,7 +26,6 @@ export const Modal = () => {
   const buttonModalRef = useRef(null);
 
   const candidateSubmit: SubmitHandler<TCandicateForm> = async (data) => {
-    console.log(data);
     const userJobId = { userId: applyJob?.userId, jobId: applyJob?.jobId };
     const detailsApplyJobs = { ...data, ...userJobId };
     fetchApplications(detailsApplyJobs);

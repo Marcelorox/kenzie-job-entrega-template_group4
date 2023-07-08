@@ -11,8 +11,6 @@ import { useContext } from "react";
 import { AdminContext } from "../../context/adminContext";
 import { Styledsection } from "./style";
 import { Link } from "react-router-dom";
-import { number } from "zod";
-import { UserContext } from "../../context/candidateContext";
 
 export const AdminNewVacanciesPage = () => {
   const { addJobs } = useContext(AdminContext);
@@ -25,12 +23,11 @@ export const AdminNewVacanciesPage = () => {
     resolver: zodResolver(newVacanciesZod),
   });
 
-  const adminId:string = window.localStorage.getItem("@ADMINID")
-  const adminIdNumber  = parseInt(adminId)
+  const adminId: number = parseInt(window.localStorage.getItem("@ADMINID") || "0");
+  const adminIdNumber  = adminId
 
   const candidateSubmit: SubmitHandler<TNewVacanciesZod> = async (data) => {
     const cadastro ={...data, "userId":adminIdNumber}
-    // console.log(cadastro)
     addJobs(cadastro);
 
     reset();
