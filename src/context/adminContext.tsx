@@ -29,24 +29,20 @@ interface IAdminUpdateJobs {
 }
 
 interface IAdminCandidatesResponse extends AxiosResponse {
-    data: {
         "id": number,
         "jobId": number,
         "userId": number,
         "name": string, 
         "email": string,
         "linkedin": string,
-    }
 }
 
 export interface IAdminJobResponse extends AxiosResponse {
-    data: {
         "userId": number,
         "id": number,   
         "position": string,
         "sallary": number,
         "description": string,
-    }
 }
 
 interface AdminContextProps {
@@ -131,6 +127,7 @@ export const AdminProvider = ({ children }: IAdminProviderProps) => {
         try {
             const response = await api.get(`jobs/${companyID}/applications`, { headers: { Authorization: `Bearer ${token}` } })
             setCandidates(response.data)
+            console.log(response.data)
         } catch (error) {
             console.log(error)
         }
