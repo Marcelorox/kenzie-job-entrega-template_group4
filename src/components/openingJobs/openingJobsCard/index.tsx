@@ -5,7 +5,6 @@ import add from "../../../assets/img/addIcons.svg";
 import sub from "../../../assets/img/subIcons.svg";
 import { UserContext } from "../../../context/candidateContext";
 import { useContext} from "react";
-// import { func } from "prop-types";
 
 export interface IUsers {
   email: string;
@@ -40,7 +39,6 @@ export const OpeningJobsCard = ({
 const applyClickButton = () =>{
   setIsOpen(true)
   setApplyJob({"userId":user.id,"jobId": jobApplyID,"position":position, "empresa":user.name})
-  console.log(setApplyJob)
 }
 
   return (

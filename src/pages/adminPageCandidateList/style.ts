@@ -58,6 +58,7 @@ export const StyledContainerAdminCandidateList = styled.section`
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        cursor: pointer;
     }
 
     .descriptionCandidateDiv {
@@ -67,5 +68,8 @@ export const StyledContainerAdminCandidateList = styled.section`
         gap: 1.5rem;
     }
 
+    .descriptionCandidateDivNone {
+        display: none;
+    }
     
 `
