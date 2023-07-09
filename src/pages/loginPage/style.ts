@@ -75,7 +75,5 @@ export const StyleContainerLoginPage = styled.div`
         .container_login{
             margin-top: 80px;
         }
-
-
     }
 `

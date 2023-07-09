@@ -11,7 +11,6 @@ import { useParams } from "react-router-dom";
 
 export const UpdateForm = () => {
     const { updateJobs } = useContext(AdminContext)
-
     const {
         register,
         handleSubmit,

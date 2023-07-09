@@ -21,14 +21,10 @@ export const ListVacancies = () => {
       </div>
       <div>
         <ul>
-            {/*
-                specificJobs.map((vacancy) => {
-                    console.log(vacancy)
-                    
+            {
+                specificJobs.map((vacancy) => {                    
                     return <CardVacancy key={vacancy.id} vacancy={vacancy} />})
-                */}
-                <CardVacancy />
-                <CardVacancy />
+            }
         </ul>
       </div>
     </StyleContainerVacancies>

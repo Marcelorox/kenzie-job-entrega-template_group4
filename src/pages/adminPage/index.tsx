@@ -4,22 +4,23 @@ import { StyleContainerAdminPage } from "./style";
 import { StyledParagraph, StyledTitleOne } from "../../style/typography";
 import { useState } from "react";
 import { ListVacancies } from "../../components/lists/listVacancies/ListVacancies";
+import { AdminPageCandidateList } from "../adminPageCandidateList";
 
 export const AdminPage = () => {
   const [optionRender, setOptionRender] = useState("");
-  const [nameCompany, setNameCompany] = useState(true);
+  const [nameCompanyRender, setNameCompanyRender] = useState(true);
   const name = localStorage.getItem("@ADMINNAME")
 
    const updateData = (option: string) =>{
         setOptionRender(option)
-        setNameCompany(false)
+        setNameCompanyRender(false)
    }
   return (
     <>
       <HeaderPrivate />
       <main>
         <StyleContainerAdminPage>
-          {nameCompany ? (
+          {nameCompanyRender ? (
             <div className="info__company">
               <StyledTitleOne>{name}</StyledTitleOne>
               <StyledParagraph>
@@ -41,9 +42,10 @@ export const AdminPage = () => {
           <section>
             {optionRender === "vacancies" ? (
               <ListVacancies />
-            ) : (
-              <p>Candidaturas</p>
-            )}
+            ) : (null) }
+            {optionRender === "application"?(
+              <AdminPageCandidateList/>
+            ) : (null)}
           </section>
         </StyleContainerAdminPage>
       </main>

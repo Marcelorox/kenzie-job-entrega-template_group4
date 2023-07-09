@@ -27,7 +27,7 @@ interface Job {
   user:IUser
 }
 
-interface IUsers {
+interface IUser {
   email: string;
   password: string;
   name: string;
@@ -49,10 +49,6 @@ interface ApplicationsResponse extends AxiosResponse {
     email: string;
     linkedin: string;
   };
-}
-
-interface usersResponse extends AxiosResponse {
-  data: IUsers[];
 }
 
 interface IAdmin {
@@ -77,12 +73,7 @@ interface IApplyJob {
   position: string;
   empresa: string;
 }
-interface IAdminLoginResponse {
-  accessToken: string;
-  user: IAdmin;
-}
-
-interface IIsOpen {
+ interface IAdminLoginResponse {
   accessToken: string;
   user: IAdmin;
 }
@@ -90,7 +81,7 @@ interface IIsOpen {
 interface UserContextProps {
   jobs: Job[] | [];
   navigate: NavigateFunction;
-  fetchApplications: (formData: ApplicationsResponse) => void;
+  fetchApplications: (formData: ApplicationsRequest) => void;
   admin: IAdmin | null;
   companyRegister: (formData: IAdminRegister) => void;
   companyLogin: (formData: IAdminLogin) => void;
@@ -127,19 +118,18 @@ export const UserContext = createContext<UserContextProps>(
     }
   };
 
-
-
   useEffect(() => {
     fetchJobs();
   }, []);
 
 
-  const fetchApplications = async (formData: ApplicationsResponse) => {
+  const fetchApplications = async (formData: ApplicationsRequest) => {
     try {
       const { data }: ApplicationsResponse =
         await api.post<ApplicationsRequest>("applications", formData);
       setIsOpen(false);
       toast.success('Candidatura realizada com sucesso')
+      console.log(data)
     } catch (error) {
       toast.error('Ops! algo deu errado')
     }
@@ -149,6 +139,7 @@ export const UserContext = createContext<UserContextProps>(
     try {
       await api.post("users", formData);
       toast.success('Cadastrado com sucesso')
+      navigate("entrar")
     } catch (error) {
       toast.error('Ops! algo deu errado')
     }

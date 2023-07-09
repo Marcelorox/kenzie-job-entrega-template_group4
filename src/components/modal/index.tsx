@@ -1,17 +1,22 @@
-// import { useEffect, useRef } from "react";
 import { StyledDiv } from "./style";
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { UserContext } from "../../context/candidateContext";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { TCandicateForm, candidateFormSchema } from "./zodCandidatura";
+import { TCandicateForm, candidateFormSchema } from "./zodCandidature";
 import { Input } from "../inputs/Inputs";
 import { StyledTitleTwo } from "../../style/typography";
 import close from "../../assets/img/closeModal.svg";
 
+interface IdetailsApplyJobs {
+  userId: number;
+  jobId: number;
+  name: string;
+  email: string;
+  linkedin: string;
+}
 
 export const Modal = () => {
-
   const { setIsOpen, fetchApplications, applyJob } = useContext(UserContext);
 
   const {
@@ -23,15 +28,42 @@ export const Modal = () => {
     resolver: zodResolver(candidateFormSchema),
   });
 
-  const modalRef = useRef(null);
-  const buttonModalRef = useRef(null);
+  const modalRef = useRef<HTMLDivElement | null>(null);
+  const buttonModalRef = useRef<HTMLButtonElement | null>(null);
+
+  useEffect(() => {
+    const modalOutClick = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener("mousedown", modalOutClick);
+
+    return () => {
+      window.removeEventListener("mousedown", modalOutClick);
+    };
+  }, []);
+
+  useEffect(() => {
+    const buttonEsclRef = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener("keydown", buttonEsclRef);
+
+    return () => {
+      window.removeEventListener("keydown", buttonEsclRef);
+    };
+  }, []);
 
   const candidateSubmit: SubmitHandler<TCandicateForm> = async (data) => {
-    console.log(data);
-    const userJobId = { userId: applyJob?.userId, jobId: applyJob?.jobId };
-    const detailsApplyJobs = { ...data, ...userJobId };
-    fetchApplications(detailsApplyJobs);
-    reset();
+    if (applyJob) {
+      const userJobId = { userId: applyJob.userId, jobId: applyJob.jobId };
+      const detailsApplyJobs: IdetailsApplyJobs = { ...data, ...userJobId };
+      fetchApplications(detailsApplyJobs);
+      reset();
+    }
   };
 
   return (
@@ -47,8 +79,7 @@ export const Modal = () => {
               onClick={() => setIsOpen(false)}
             />
             <h5>
-              Você está se candidatando para <span>{applyJob?.position}</span>{" "}
-              na
+              Você está se candidatando para <span>{applyJob?.position}</span> na
               <span> {applyJob?.empresa}</span>
             </h5>
           </div>
@@ -60,21 +91,21 @@ export const Modal = () => {
               className="inputModal"
               type="text"
               placeholder="Nome"
-              error={errors.name} 
+              error={errors?.name} // Adicionado '?' para tratar o erro caso 'errors' seja undefined
               {...register("name")}
             />
             <Input
               className="inputModal"
               type="email"
               placeholder="E-mail"
-              error={errors.email}
+              error={errors?.email} // Adicionado '?' para tratar o erro caso 'errors' seja undefined
               {...register("email")}
             />
             <Input
               className="inputModal"
               type="text"
               placeholder="Linkedin"
-              error={errors.linkedin}
+              error={errors?.linkedin} // Adicionado '?' para tratar o erro caso 'errors' seja undefined
               {...register("linkedin")}
             />
 
