@@ -51,10 +51,6 @@ interface ApplicationsResponse extends AxiosResponse {
   };
 }
 
-interface usersResponse extends AxiosResponse {
-  data: IUsers[];
-}
-
 interface IAdmin {
   email: string;
   name: string;

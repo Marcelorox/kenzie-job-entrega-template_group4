@@ -70,7 +70,7 @@ export const Modal = () => {
       fetchApplications(detailsApplyJobs);
       reset();
     } else {
-      const userJobId ={userId: 0, jobId: 0}
+      null
     }
    
   };

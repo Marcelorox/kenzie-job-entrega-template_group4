@@ -16,16 +16,10 @@ export const HomePage = () => {
 
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  const scrollToSection:MyFunctionType= () => {
-    if (sectionRef.current) {
-      sectionRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <>
       {isOpen ? <Modal /> : null}
-      <Header scrollToSection={scrollToSection} />
+      <Header />
       <Styledsection className="homeJobs_containner">
         <div className="homeJobs_caixa">
           <div className="homeJobs_fraseInicial">
