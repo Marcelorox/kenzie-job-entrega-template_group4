@@ -3,7 +3,7 @@ import { useContext, useEffect, useRef } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { UserContext } from "../../context/candidateContext";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { TCandicateForm, candidateFormSchema } from "./zodCandidature";
+import { TCandicateForm, candidateFormSchema } from "./ModalSchema";
 import { Input } from "../inputs/Inputs";
 import { StyledTitleTwo } from "../../style/typography";
 import close from "../../assets/img/closeModal.svg";

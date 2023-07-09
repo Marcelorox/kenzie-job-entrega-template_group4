@@ -12,7 +12,7 @@ import { Styledsection } from "./style";
 import { Link } from "react-router-dom";
 import { StyledParagraph} from "../../style/typography";
 import { StyleAlertSchema } from "../../components/inputs/StyleAlertSchema";
-import { TNewVacanciesZod, newVacanciesZod } from './newVacanciesZod';
+import { TNewVacanciesZod, newVacanciesZod } from "./NewVacanciesSchema";
 
 export const AdminNewVacanciesPage = () => {
   const { addJobs } = useContext(AdminContext);

@@ -11,17 +11,17 @@ import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
 
 export const UpdateForm = () => {
+    const params = useParams()
     const { updateJobs } = useContext(AdminContext)
-    const params  = useParams<{ id: string }>() 
-    
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm<TUpdateForm>({
         resolver: zodResolver(updateFormSchema),
-    });
-    const UpdateSubmit = (formData : TUpdateForm) => {
+      });
+
+      const UpdateSubmit = (formData : TUpdateForm) => {
         if (params.id) {
             console.log('entrou')
             const update = {...formData, userId: uuidv4()}

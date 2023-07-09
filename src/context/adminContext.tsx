@@ -104,9 +104,10 @@ export const AdminProvider = ({ children }: IAdminProviderProps) => {
     const addJobs = async (formData: IAdminAddJobs) => {
 
         try {
-            await api.post<IAdminAddJobsResponse>("jobs", formData, { headers: { Authorization: `Bearer ${token}` } });
+            const { data } = await api.post("jobs", formData, { headers: { Authorization: `Bearer ${token}` } });
             toast.success('Cadastrado de vaga com sucesso')
             navigate("/dashboard")
+            setSpecificJobs([...specificJobs, data])
         } catch (error) {
             console.log(error);
             toast.error('Ops! algo deu errado')
@@ -115,7 +116,12 @@ export const AdminProvider = ({ children }: IAdminProviderProps) => {
 
     const updateJobs = async (formData: IAdminUpdateJobs, jobId: number) => {
         try {
-            await api.put(`jobs/${jobId}`, formData, { headers: { Authorization: `Bearer ${token}` } });
+            let currentJobs = [...specificJobs]
+            currentJobs = currentJobs.filter((jobs) => jobs.id !== jobId)
+            const { data } = await api.put(`jobs/${jobId}`, formData, { headers: { Authorization: `Bearer ${token}` } });
+            toast.success("Vaga editada com sucesso")
+            navigate("/dashboard")
+            setSpecificJobs([...currentJobs, data])
         } catch (error) {
             console.log(error)
         }

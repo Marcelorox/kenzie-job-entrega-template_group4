@@ -9,8 +9,9 @@ import { AdminContext } from "../../../../context/adminContext";
 
 
 export const CardVacancy = ({ vacancy  }: any) => {
-
  const { modalOpen,  setModalOpen } = useContext(AdminContext)
+
+ 
   return (
     <StyleCardVacancy>
        {modalOpen? <ModalDelete id={vacancy.id} setModalOpen={setModalOpen}/> : null}
