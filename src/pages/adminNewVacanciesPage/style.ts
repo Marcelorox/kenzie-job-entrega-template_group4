@@ -15,10 +15,10 @@ export const Styledsection = styled.section`
     flex-direction: column;
     justify-content: center;
   }
-  .imgSeta {
+  .arrowImg {
     width: 18px;
   }
-  .voltar {
+  .return {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -33,7 +33,7 @@ export const Styledsection = styled.section`
       color: var(--blue);
     }
   }
-  .voltarContainner {
+  .returnContainner {
     align-self: center;
     width: 100%;
     max-width: 1328px;
@@ -52,7 +52,7 @@ export const Styledsection = styled.section`
     line-height: 78px;
     margin-bottom: 2rem;
   }
-  .formSaction {
+  .formSection {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -66,7 +66,7 @@ export const Styledsection = styled.section`
     max-width: 639px;
   }
 
-  .inputCriarVaga {
+  .inputNewPosition {
     height: 66px;
     margin-bottom: 1rem;
     margin-top: 1rem;
@@ -75,7 +75,7 @@ export const Styledsection = styled.section`
     border-radius: 40px;
   }
 
-  .inputCriarVagaDescrição {
+  .inputNewPositionDescription {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -88,15 +88,15 @@ export const Styledsection = styled.section`
     font-family: var(--Font-primary);
   }
 
-  .inputCriarVaga,
-  .inputCriarVagaDescrição {
+  .inputNewPosition,
+  .inputNewPositionDescription {
     font-weight: 700;
     font-size: var(--size-menu);
     line-height: 19.5px;
     color: rgba(16, 17, 26, 0.5);
   }
 
-  .buttonCriaVaga {
+  .buttonNewPositionCreate {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -117,7 +117,7 @@ export const Styledsection = styled.section`
   }
 
   @media (min-width: 600px) {
-    .buttonCriaVaga {
+    .buttonNewPositionCreate {
       width: 40%;
     }
     h1 {
@@ -126,7 +126,7 @@ export const Styledsection = styled.section`
   }
 
   @media (min-width: 700px) {
-    .voltarContainner {
+    .returnContainner {
       width: 80%;
     }
   }

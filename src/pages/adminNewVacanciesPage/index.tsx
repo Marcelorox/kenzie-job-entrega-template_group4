@@ -41,39 +41,39 @@ export const AdminNewVacanciesPage = () => {
     <>
       <HeaderPrivate />
       <Styledsection>
-        <div className="voltarContainner">
-          <div className="voltar">
+        <div className="returnContainner">
+          <div className="return">
             <Link to={"/dashboard"}>
-              <img className="imgSeta" src={seta} alt="seta voltar" />
+              <img className="arrowImg" src={seta} alt="seta voltar" />
             <StyledParagraph>voltar</StyledParagraph>
             </Link>
           </div>
         </div>
         <div className="sectionContainner">
-          <section className="formSaction">
+          <section className="formSection">
             <h1>Criar vaga</h1>
             <form onSubmit={handleSubmit(candidateSubmit)}>
               <Input 
-                className="inputCriarVaga"
+                className="inputNewPosition"
                 type="text"
-                placeholder="Cargo"
+                placeholder="Cargo" 
                 error={errors.position}
                 {...register("position")}
               />
               <Input
-                className="inputCriarVaga"
+                className="inputNewPosition"
                 type="text"
                 placeholder="Salário (opcional)"
                 error={errors.sallary}
                 {...register("sallary")}
               />
               <textarea                
-               className="inputCriarVagaDescrição"
+               className="inputNewPositionDescription"
                placeholder="Descrição"
                 {...register("description")}>
                 </textarea>
                 <StyleAlertSchema>{errors.description?.message}</StyleAlertSchema>
-              <button type="submit" className="buttonCriaVaga">
+              <button type="submit" className="buttonNewPositionCreate">
                 <img src={criar} alt="criar vaga" />
                 <img src={textoCriarVagas} alt=" texto criar vaga" />
               </button>

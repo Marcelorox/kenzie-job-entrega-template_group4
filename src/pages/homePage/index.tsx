@@ -18,8 +18,8 @@ export const HomePage = () => {
       {isOpen ? <Modal /> : null}
       <Header />
       <Styledsection className="homeJobs_containner">
-        <div className="homeJobs_caixa">
-          <div className="homeJobs_fraseInicial">
+        <div className="homeJobs_box">
+          <div className="homeJobs_marketing">
             <h1>Trabalho é na jobs</h1>
           </div>
         </div>
@@ -40,8 +40,8 @@ export const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className="homeJobs_listaDeVagas" >
-          <div className="homeJobs_listaDeVagas--Containner">
+        <div className="homeJobs_jobsList" >
+          <div className="homeJobs_jobsList--Containner">
             <h1>Confira Nossas vagas</h1>
             <OpeningJobsList />
           </div>
