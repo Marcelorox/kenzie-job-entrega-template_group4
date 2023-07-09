@@ -7,7 +7,9 @@ import { useContext } from "react";
 import { ModalDelete } from "../../../modal/modalDelete";
 import { AdminContext } from "../../../../context/adminContext";
 
-export const CardVacancy = ({ vacancy }: any) => {
+
+export const CardVacancy = ({ vacancy  }: any) => {
+
  const { modalOpen,  setModalOpen } = useContext(AdminContext)
   return (
     <StyleCardVacancy>
