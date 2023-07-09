@@ -8,9 +8,6 @@ import { useContext, useRef } from "react";
 import { UserContext } from "../../context/candidateContext";
 import { Modal } from "../../components/modal/index.jsx";
 
-
- type MyFunctionType= () => void;
-
 export const HomePage = () => {
   const { isOpen } = useContext(UserContext);
 

@@ -27,7 +27,7 @@ interface Job {
   user:IUser
 }
 
-interface IUsers {
+interface IUser {
   email: string;
   password: string;
   name: string;
@@ -78,10 +78,6 @@ interface IAdminLoginResponse {
   user: IAdmin;
 }
 
-interface IIsOpen {
-  accessToken: string;
-  user: IAdmin;
-}
 
 interface UserContextProps {
   jobs: Job[] | [];
@@ -134,6 +130,7 @@ export const UserContext = createContext<UserContextProps>(
         await api.post<ApplicationsRequest>("applications", formData);
       setIsOpen(false);
       toast.success('Candidatura realizada com sucesso')
+      console.log(data)
     } catch (error) {
       toast.error('Ops! algo deu errado')
     }
