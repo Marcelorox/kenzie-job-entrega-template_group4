@@ -18,13 +18,13 @@ interface IAdminAddJobs {
 interface IAdminAddJobsResponse {
     "userId": number,
     "position": string,
-    "sallary": string,
+    "sallary": number,
     "description": string,
 }
 
 interface IAdminUpdateJobs {
     "position": string,
-    "sallary": number,
+    "sallary": string,
     "description": string,
 }
 

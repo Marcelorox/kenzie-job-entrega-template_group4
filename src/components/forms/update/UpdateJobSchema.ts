@@ -6,7 +6,7 @@ export const updateFormSchema = z.object({
     .nonempty("Cargo é obrigatório")
     .min(3, "Nome precisa de elo menos 3 caracteres"),
   sallary: z
-    .string(),  
+  .string(),
   description: z
     .string()
     .nonempty("Descrição é obrigatória")

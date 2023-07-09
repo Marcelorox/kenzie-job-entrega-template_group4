@@ -1,5 +1,5 @@
 import { AdminContext } from "../../../context/adminContext";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Input } from "../../inputs/Inputs"
 import { TextArea } from "../../textarea"
 import { useContext } from "react";
@@ -7,9 +7,12 @@ import { TUpdateForm, updateFormSchema } from "./UpdateJobSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "../../button/Button";
 import { StyledFormMainContainer, StyleFormUpdatePage } from "./style";
+import { useParams } from "react-router-dom";
 
 export const UpdateForm = () => {
     const { updateJobs } = useContext(AdminContext)
+    const params  = useParams<{ id: string }>()
+
     const {
         register,
         handleSubmit,
@@ -18,10 +21,16 @@ export const UpdateForm = () => {
         resolver: zodResolver(updateFormSchema),
       });
 
-    const registerUpdateSubmit: SubmitHandler<TUpdateForm> = (formData) => {
-        updateJobs(formData);
+      const registerUpdateSubmit = (formData : TUpdateForm) => {
+        if (params.id) {
+            console.log('entrou')
+          const jobId : number = parseInt(params.id);
+          updateJobs(formData, jobId);
+        }else{
+            console.log('error')
+        }
       };
-
+      
     return(
         <StyleFormUpdatePage onSubmit={handleSubmit(registerUpdateSubmit)} className="form">
             <StyledFormMainContainer>
