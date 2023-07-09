@@ -23,6 +23,7 @@ interface IAdminAddJobsResponse {
 }
 
 interface IAdminUpdateJobs {
+    "userId": string,
     "position": string,
     "sallary": string,
     "description": string,
