@@ -9,12 +9,12 @@ import { AdminPageCandidateList } from "../adminPageCandidateList";
 export const AdminPage = () => {
   const [optionRender, setOptionRender] = useState("");
   const [nameCompanyRender, setNameCompanyRender] = useState(true);
-  const name = localStorage.getItem("@ADMINNAME")
+  const name = localStorage.getItem("@ADMINNAME");
 
-   const updateData = (option: string) =>{
-        setOptionRender(option)
-        setNameCompanyRender(false)
-   }
+  const updateData = (option: string) => {
+    setOptionRender(option);
+    setNameCompanyRender(false);
+  };
   return (
     <>
       <HeaderPrivate />
@@ -40,12 +40,8 @@ export const AdminPage = () => {
             </button>
           </div>
           <section>
-            {optionRender === "vacancies" ? (
-              <ListVacancies />
-            ) : (null) }
-            {optionRender === "application"?(
-              <AdminPageCandidateList/>
-            ) : (null)}
+            {optionRender === "vacancies" && <ListVacancies />}
+            {optionRender === "application" && <AdminPageCandidateList />}
           </section>
         </StyleContainerAdminPage>
       </main>

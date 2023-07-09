@@ -1,7 +1,6 @@
 import { HeaderPrivate } from "../../components/Header/headerPrivate";
 import { Footer } from "../../components/Footer";
 import { Input } from "../../components/inputs/Inputs";
-import { TNewVacanciesZod, newVacanciesZod } from "./NewVacanciesSchema";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import seta from "../../assets/img/seta.svg";
@@ -13,6 +12,7 @@ import { Styledsection } from "./style";
 import { Link } from "react-router-dom";
 import { StyledParagraph} from "../../style/typography";
 import { StyleAlertSchema } from "../../components/inputs/StyleAlertSchema";
+import { TNewVacanciesZod, newVacanciesZod } from "./NewVacanciesSchema";
 
 export const AdminNewVacanciesPage = () => {
   const { addJobs } = useContext(AdminContext);

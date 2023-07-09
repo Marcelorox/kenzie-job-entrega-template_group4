@@ -5,10 +5,13 @@ import remove from "../../../../assets/img/Delete.png";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ModalDelete } from "../../../modal/modalDelete";
-import { AdminContext, } from "../../../../context/adminContext";
+import { AdminContext } from "../../../../context/adminContext";
 
-export const CardVacancy = ({ vacancy }: any) => {
+
+export const CardVacancy = ({ vacancy  }: any) => {
  const { modalOpen,  setModalOpen } = useContext(AdminContext)
+
+ 
   return (
     <StyleCardVacancy>
        {modalOpen? <ModalDelete id={vacancy.id} setModalOpen={setModalOpen}/> : null}
