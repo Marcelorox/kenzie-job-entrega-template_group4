@@ -1,7 +1,7 @@
 import { HeaderPrivate } from "../../components/Header/headerPrivate";
 import { Footer } from "../../components/Footer";
 import { Input } from "../../components/inputs/Inputs";
-import { TNewVacanciesZod, newVacanciesZod } from "./NewVacanciesZod";
+import { TNewVacanciesZod, newVacanciesZod } from "./NewVacanciesSchema";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import seta from "../../assets/img/seta.svg";
