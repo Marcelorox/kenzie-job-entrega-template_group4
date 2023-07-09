@@ -5,23 +5,22 @@ import { StyledParagraph, StyledTitleOne } from "../../style/typography";
 import { useState } from "react";
 import { ListVacancies } from "../../components/lists/listVacancies/ListVacancies";
 import { AdminPageCandidateList } from "../adminPageCandidateList";
-import { ModalDelete } from "../../components/modal/modalDelete";
 
 export const AdminPage = () => {
   const [optionRender, setOptionRender] = useState("");
-  const [nameCompany, setNameCompany] = useState(true);
+  const [nameCompanyRender, setNameCompanyRender] = useState(true);
   const name = localStorage.getItem("@ADMINNAME")
 
    const updateData = (option: string) =>{
         setOptionRender(option)
-        setNameCompany(false)
+        setNameCompanyRender(false)
    }
   return (
     <>
       <HeaderPrivate />
       <main>
         <StyleContainerAdminPage>
-          {nameCompany ? (
+          {nameCompanyRender ? (
             <div className="info__company">
               <StyledTitleOne>{name}</StyledTitleOne>
               <StyledParagraph>
