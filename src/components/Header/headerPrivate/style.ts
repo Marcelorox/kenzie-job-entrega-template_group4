@@ -24,6 +24,10 @@ export const StyleContainerHeaderPrivate = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+
+        h3{
+            font-weight: 700;
+        }
     }
 
     .logout{

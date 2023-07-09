@@ -42,9 +42,10 @@ export const AdminPage = () => {
           <section>
             {optionRender === "vacancies" ? (
               <ListVacancies />
-            ) : (
+            ) : (null) }
+            {optionRender === "application"?(
               <AdminPageCandidateList/>
-            )}
+            ) : (null)}
           </section>
         </StyleContainerAdminPage>
       </main>

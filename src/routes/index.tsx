@@ -29,7 +29,7 @@ export const RoutesMain = () => {
           }
         />
         <Route  path="/dashboard/criarVaga" element={<AdminNewVacanciesPage/>}/>
-        <Route  path="/dashboard/editar/:id" element={<UpdateJobs />}/>
+        <Route  path="/dashboard/:name/:id" element={<UpdateJobs />}/>
       </Route>
     </Routes>
   );

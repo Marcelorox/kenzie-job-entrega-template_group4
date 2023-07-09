@@ -9,9 +9,6 @@ export const StyledContainerAdminCandidateList = styled.section`
     height: 75vh;
 
     h1 {
-        font-family: var(--Font-primary);
-        font-weight: 700;
-        font-size: 4rem;
         line-height: 4.9063rem;
         color: var(--blue);
     }
