@@ -7,6 +7,7 @@ import { TUpdateForm, updateFormSchema } from "./UpdateJobSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "../../button/Button";
 import { StyledFormMainContainer, StyleFormUpdatePage } from "./style";
+import { useParams } from "react-router-dom";
 
 export const UpdateForm = () => {
     const { updateJobs } = useContext(AdminContext)
@@ -19,8 +20,8 @@ export const UpdateForm = () => {
         resolver: zodResolver(updateFormSchema),
       });
 
-    const registerUpdateSubmit: SubmitHandler<TUpdateForm> = (formData) => {
-        updateJobs(formData);
+    const registerUpdateSubmit: SubmitHandler<TUpdateForm> = (formData, jobId) => {
+        //updateJobs(formData);
       };
 
     return(
