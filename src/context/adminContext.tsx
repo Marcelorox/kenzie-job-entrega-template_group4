@@ -127,7 +127,6 @@ export const AdminProvider = ({ children }: IAdminProviderProps) => {
         try {
             const response = await api.get(`jobs/${companyID}/applications`, { headers: { Authorization: `Bearer ${token}` } })
             setCandidates(response.data)
-            console.log(response.data)
         } catch (error) {
             console.log(error)
         }

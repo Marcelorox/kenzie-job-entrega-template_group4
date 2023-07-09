@@ -1,4 +1,3 @@
-import { boolean } from "zod"
 import { StyledTitleThree } from "../../../style/typography"
 import { Button } from "../../button/Button"
 import { StyleModalDeleteContainer } from "./StyleModalDeleteConatier"

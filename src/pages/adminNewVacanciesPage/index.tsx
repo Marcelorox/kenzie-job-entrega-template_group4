@@ -23,11 +23,13 @@ export const AdminNewVacanciesPage = () => {
     resolver: zodResolver(newVacanciesZod),
   });
 
-  const adminId: number = parseInt(window.localStorage.getItem("@ADMINID") || "0");
-  const adminIdNumber  = adminId
+  const adminId: number = parseInt(
+    window.localStorage.getItem("@ADMINID") || "0"
+  );
+  const adminIdNumber = adminId;
 
   const candidateSubmit: SubmitHandler<TNewVacanciesZod> = async (data) => {
-    const cadastro ={...data, "userId":adminIdNumber}
+    const cadastro = { ...data, userId: adminIdNumber };
     addJobs(cadastro);
 
     reset();
@@ -37,13 +39,15 @@ export const AdminNewVacanciesPage = () => {
     <>
       <HeaderPrivate />
       <Styledsection>
-        <div className="sectionContainner">
+        <div className="voltarContainner">
           <div className="voltar">
             <Link to={"/dashboard"}>
               <img className="imgSeta" src={seta} alt="seta voltar" />
             </Link>
             <h5>voltar</h5>
           </div>
+        </div>
+        <div className="sectionContainner">
           <section className="formSaction">
             <h1>Criar vaga</h1>
             <form onSubmit={handleSubmit(candidateSubmit)}>
@@ -61,8 +65,9 @@ export const AdminNewVacanciesPage = () => {
                 error={errors.sallary}
                 {...register("sallary")}
               />
-              <textarea
+              <Input
                 className="inputCriarVagaDescrição"
+                type="text"
                 placeholder="Descrição"
                 error={errors.description}
                 {...register("description")}
