@@ -36,8 +36,6 @@ export const AdminPageCandidateList = () => {
         return uuidv4();
     }
 
-    console.log(candidatureList)
-
     return (
         <>
             <StyledContainerAdminCandidateList>

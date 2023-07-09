@@ -1,5 +1,5 @@
 import { StyledDiv } from "./style";
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { UserContext } from "../../context/candidateContext";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -8,6 +8,13 @@ import { Input } from "../inputs/Inputs";
 import { StyledTitleTwo } from "../../style/typography";
 import close from "../../assets/img/closeModal.svg";
 
+interface IdetailsApplyJobs{
+  userId:number;
+  jobId:number;
+  name:string;
+  email:string;
+  linkedin:string;
+}
 
 export const Modal = () => {
 
@@ -25,11 +32,47 @@ export const Modal = () => {
   const modalRef = useRef(null);
   const buttonModalRef = useRef(null);
 
+  // useEffect(() => {
+  //   const modalOutClick = (event:React.MouseEvent) => {
+  //     if (!modalRef.current?.contains(event.target)) {
+  //       setIsOpen(false);
+  //     }
+  //   };
+  //   window.addEventListener("mousedown", modalOutClick);
+
+  //   return () => {
+  //     window.removeEventListener("mousedown", modalOutClick);
+  //   };
+  // }, []);
+
+  
+  useEffect(() => {
+    const buttonEsclRef = (event:KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener("keydown", buttonEsclRef);
+
+    return () => {
+      window.removeEventListener("keydown", buttonEsclRef);
+    };
+  }, []);
+
+
+  
+
   const candidateSubmit: SubmitHandler<TCandicateForm> = async (data) => {
-    const userJobId = { userId: applyJob?.userId, jobId: applyJob?.jobId };
-    const detailsApplyJobs = { ...data, ...userJobId };
-    fetchApplications(detailsApplyJobs);
-    reset();
+  
+    if(applyJob){
+      const userJobId = { userId: applyJob.userId, jobId: applyJob.jobId };
+      const detailsApplyJobs:IdetailsApplyJobs = { ...data, ...userJobId };
+      fetchApplications(detailsApplyJobs);
+      reset();
+    } else {
+      const userJobId ={userId: 0, jobId: 0}
+    }
+   
   };
 
   return (
