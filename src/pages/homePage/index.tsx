@@ -4,14 +4,14 @@ import { Styledsection } from "./style";
 import equipe from "../../assets/img/equipe.svg";
 import { StyledParagraph } from "../../style/typography";
 import { OpeningJobsList } from "../../components/openingJobs/openingJobsList";
-import { useContext, useRef } from "react";
+import { useContext} from "react";
 import { UserContext } from "../../context/candidateContext";
 import { Modal } from "../../components/modal/index.jsx";
 
-export const HomePage = () => {
-  const { isOpen } = useContext(UserContext);
 
-  const sectionRef = useRef<HTMLDivElement>(null);
+export const HomePage = () => {
+  
+  const { isOpen } = useContext(UserContext);
 
   return (
     <>
@@ -40,7 +40,7 @@ export const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className="homeJobs_listaDeVagas" ref={sectionRef}>
+        <div className="homeJobs_listaDeVagas" >
           <div className="homeJobs_listaDeVagas--Containner">
             <h1>Confira Nossas vagas</h1>
             <OpeningJobsList />

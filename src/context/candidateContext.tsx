@@ -78,7 +78,6 @@ interface IAdminLoginResponse {
   user: IAdmin;
 }
 
-
 interface UserContextProps {
   jobs: Job[] | [];
   navigate: NavigateFunction;
