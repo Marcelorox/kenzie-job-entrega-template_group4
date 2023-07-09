@@ -10,8 +10,8 @@ import { Modal } from "../../components/modal/index.jsx";
 
 
 export const HomePage = () => {
+  
   const { isOpen } = useContext(UserContext);
-
 
   return (
     <>

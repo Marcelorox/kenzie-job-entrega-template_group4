@@ -69,7 +69,7 @@ export const Modal = () => {
       const detailsApplyJobs:IdetailsApplyJobs = { ...data, ...userJobId };
       fetchApplications(detailsApplyJobs);
       reset();
-    } 
+    }
    
   };
 

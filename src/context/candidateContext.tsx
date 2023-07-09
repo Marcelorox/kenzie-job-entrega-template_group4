@@ -27,7 +27,7 @@ interface Job {
   user:IUser
 }
 
-interface IUsers {
+interface IUser {
   email: string;
   password: string;
   name: string;
@@ -49,10 +49,6 @@ interface ApplicationsResponse extends AxiosResponse {
     email: string;
     linkedin: string;
   };
-}
-
-interface usersResponse extends AxiosResponse {
-  data: IUsers[];
 }
 
 interface IAdmin {
@@ -133,6 +129,7 @@ export const UserContext = createContext<UserContextProps>(
         await api.post<ApplicationsRequest>("applications", formData);
       setIsOpen(false);
       toast.success('Candidatura realizada com sucesso')
+      console.log(data)
     } catch (error) {
       toast.error('Ops! algo deu errado')
     }

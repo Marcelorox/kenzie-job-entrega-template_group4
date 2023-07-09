@@ -5,7 +5,6 @@ import { StyledParagraph, StyledTitleOne } from "../../style/typography";
 import { useState } from "react";
 import { ListVacancies } from "../../components/lists/listVacancies/ListVacancies";
 import { AdminPageCandidateList } from "../adminPageCandidateList";
-import { ModalDelete } from "../../components/modal/modalDelete";
 
 export const AdminPage = () => {
   const [optionRender, setOptionRender] = useState("");

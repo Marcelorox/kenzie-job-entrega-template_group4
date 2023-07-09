@@ -5,7 +5,6 @@ import { RegisterPage } from "../pages/registerPage";
 import { LoginPage } from "../pages/loginPage";
 import { SearchJobOpennings } from "../pages/searchOpenningsJob";
 import { ProtectedRoutes } from "./privateRoutes";
-import { AdminProvider } from "../context/adminContext";
 import { AdminPage } from "../pages/adminPage";
 import { AdminNewVacanciesPage } from "../pages/adminNewVacanciesPage";
 import { UpdateJobs } from "../pages/adminPage/update.tsx";
