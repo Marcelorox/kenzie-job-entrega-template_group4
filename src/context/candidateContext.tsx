@@ -103,9 +103,9 @@ export const UserContext = createContext<UserContextProps>(
     const [jobs, setJobs] = useState<Job[] | []>([]);
     const [isOpen,setIsOpen]= useState(false)
     const [applyJob,setApplyJob]= useState<IApplyJob| null>(null)
-    const navigate = useNavigate();
+    const navigate : NavigateFunction = useNavigate();
     
-  const fetchJobs = async () => {
+  const fetchJobs : () => Promise<void> = async () => {
     try {
       const { data }: JobResponse = await api.get("jobs",{ 
         params:{
@@ -123,7 +123,7 @@ export const UserContext = createContext<UserContextProps>(
   }, []);
 
 
-  const fetchApplications = async (formData: ApplicationsRequest) => {
+  const fetchApplications  = async (formData: ApplicationsRequest) => {
     try {
       const { data }: ApplicationsResponse =
         await api.post<ApplicationsRequest>("applications", formData);
