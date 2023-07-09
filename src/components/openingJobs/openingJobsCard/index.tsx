@@ -42,16 +42,16 @@ const applyClickButton = () =>{
 }
 
   return (
-    <StyledLi className="cardVaga">
-      <div className="cardVaga_containner">
-        <div className="cardVaga_header" onClick={() => handdleShowJob()}>
-          <div className="cardVaga_header--containner">
+    <StyledLi className="cardPosition">
+      <div className="cardPosition_containner">
+        <div className="cardPosition_header" onClick={() => handdleShowJob()}>
+          <div className="cardPosition_header--containner">
             {showJob ? (
               <img src={sub} className="subIcon" alt="sub icons" />
             ) : (
               <img src={add} className="addIcon" alt="add icons" />
             )}
-            <div className="cardVaga_position">
+            <div className="cardPosition_positionDetails">
               <StyledLabel>{user.name}</StyledLabel>
               <StyledTitleThree>{position}</StyledTitleThree>
             </div>
@@ -59,7 +59,7 @@ const applyClickButton = () =>{
           </div>
         </div>
         
-        <div className={showJob ? "cardVaga_descripition" : "cardVaga_none"}>
+        <div className={showJob ? "cardPosition_descripitionDetails" : "cardPosition_descripitionDetailsNone"}>
           <StyledParagraph>{description}</StyledParagraph>
         </div>
       </div>

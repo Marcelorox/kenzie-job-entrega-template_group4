@@ -6,7 +6,7 @@ export const Styledsection = styled.section`
   display: flex;
   flex-direction: column;
 
-  .homeJobs_caixa {
+  .homeJobs_box {
     height: 180px;
     background: #8490ff;
     width: 100%;
@@ -18,7 +18,7 @@ export const Styledsection = styled.section`
     width: 100%;
   }
 
-  .homeJobs_fraseInicial {
+  .homeJobs_marketing {
     width: 100%;
     max-width: 1328px;
     h1{
@@ -68,7 +68,7 @@ export const Styledsection = styled.section`
     flex-wrap: wrap;
   }
 
-  .homeJobs_listaDeVagas {
+  .homeJobs_jobsList {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -82,7 +82,7 @@ export const Styledsection = styled.section`
     }
   }
 
-  .homeJobs_listaDeVagas--Containner {
+  .homeJobs_jobsList--Containner {
     width: 100%;
     max-width:1104px;
     display: flex;
@@ -108,7 +108,7 @@ export const Styledsection = styled.section`
       font-size: 4rem;
       line-height: 4.875rem;
     }
-    .homeJobs_fraseInicial, .homeJobs_aboutUsConatainner, .homeJobs_listaDeVagas--Containner{
+    .homeJobs_marketing , .homeJobs_aboutUsConatainner, .homeJobs_jobsList--Containner{
       width: 80%;
     }
     .homeJobs_aboutUsConatainner {
