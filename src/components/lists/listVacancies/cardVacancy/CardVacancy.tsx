@@ -7,7 +7,7 @@ import { useState } from "react";
 import { ModalDelete } from "../../../modal/modalDelete";
 
 export const CardVacancy = () => {
-  const [modalOpen, setModalOpen] = useState(false)
+const [modalOpen, setModalOpen] = useState(false)
     
   return (
     <StyleCardVacancy>

@@ -11,8 +11,6 @@ import { useContext } from "react";
 import { AdminContext } from "../../context/adminContext";
 import { Styledsection } from "./style";
 import { Link } from "react-router-dom";
-import { number } from "zod";
-import { UserContext } from "../../context/candidateContext";
 
 export const AdminNewVacanciesPage = () => {
   const { addJobs } = useContext(AdminContext);
@@ -25,12 +23,13 @@ export const AdminNewVacanciesPage = () => {
     resolver: zodResolver(newVacanciesZod),
   });
 
-  const adminId:string = window.localStorage.getItem("@ADMINID")
-  const adminIdNumber  = parseInt(adminId)
+  const adminId: number = parseInt(
+    window.localStorage.getItem("@ADMINID") || "0"
+  );
+  const adminIdNumber = adminId;
 
   const candidateSubmit: SubmitHandler<TNewVacanciesZod> = async (data) => {
-    const cadastro ={...data, "userId":adminIdNumber}
-    // console.log(cadastro)
+    const cadastro = { ...data, userId: adminIdNumber };
     addJobs(cadastro);
 
     reset();
@@ -40,13 +39,15 @@ export const AdminNewVacanciesPage = () => {
     <>
       <HeaderPrivate />
       <Styledsection>
-        <div className="sectionContainner">
+        <div className="voltarContainner">
           <div className="voltar">
             <Link to={"/dashboard"}>
               <img className="imgSeta" src={seta} alt="seta voltar" />
             </Link>
             <h5>voltar</h5>
           </div>
+        </div>
+        <div className="sectionContainner">
           <section className="formSaction">
             <h1>Criar vaga</h1>
             <form onSubmit={handleSubmit(candidateSubmit)}>
@@ -64,8 +65,9 @@ export const AdminNewVacanciesPage = () => {
                 error={errors.sallary}
                 {...register("sallary")}
               />
-              <textarea
+              <Input
                 className="inputCriarVagaDescrição"
+                type="text"
                 placeholder="Descrição"
                 error={errors.description}
                 {...register("description")}

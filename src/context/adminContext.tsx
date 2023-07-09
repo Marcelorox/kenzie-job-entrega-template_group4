@@ -8,25 +8,6 @@ interface IAdminProviderProps {
     children: React.ReactNode;
 }
 
-interface Jobs {
-    data: {
-        "userId": number,
-        "id": number,
-        "position": string,
-        "sallary": number,
-        "description": string,
-    }
-}
-
-interface Candidates {
-    "id": number,
-    "jobId": number,
-    "userId": number,
-    "name": string, 
-    "email": string,
-    "linkedin": string,
-}
-
 interface IAdminAddJobs {
     "userId": number,
     "position": string,
@@ -48,11 +29,20 @@ interface IAdminUpdateJobs {
 }
 
 interface IAdminCandidatesResponse extends AxiosResponse {
-    data: Candidates[]
+        "id": number,
+        "jobId": number,
+        "userId": number,
+        "name": string, 
+        "email": string,
+        "linkedin": string,
 }
 
-interface IAdminJobResponse extends AxiosResponse {
-    data: Jobs[]
+export interface IAdminJobResponse extends AxiosResponse {
+        "userId": number,
+        "id": number,   
+        "position": string,
+        "sallary": number,
+        "description": string,
 }
 
 interface AdminContextProps {

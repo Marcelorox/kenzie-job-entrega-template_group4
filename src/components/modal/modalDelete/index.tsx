@@ -1,13 +1,14 @@
-import { boolean } from "zod"
 import { StyledTitleThree } from "../../../style/typography"
 import { Button } from "../../button/Button"
 import { StyleModalDeleteContainer } from "./StyleModalDeleteConatier"
 
-interface IModalProps{
-    setOpenModal: boolean
-}
+interface IModalProps {
+    setModalOpen: (isOpen: boolean) => void;
+  }
+  
 
-export const ModalDelete = ({ setModalOpen: IModalProps }) =>{
+export const ModalDelete = ({ setModalOpen }: IModalProps) =>{
+
     return(
         <StyleModalDeleteContainer>
             <div role="dialog" className="modal">

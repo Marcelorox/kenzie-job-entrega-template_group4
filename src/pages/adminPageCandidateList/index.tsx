@@ -5,6 +5,7 @@ import add from "../../assets/img/addIcons.svg";
 import sub from "../../assets/img/subIcons.svg";
 import { v4 as uuidv4 } from 'uuid';
 
+
 export const AdminPageCandidateList = () => {
 
     const { candidateList, candidates, findJobsByCompanyId, specificJobs } = useContext(AdminContext)
@@ -35,8 +36,6 @@ export const AdminPageCandidateList = () => {
         return uuidv4();
     }
 
-    console.log(candidatureList)
-
     return (
         <>
             <StyledContainerAdminCandidateList>
@@ -44,7 +43,7 @@ export const AdminPageCandidateList = () => {
                 <ul>
                     {candidates ? candidatureList.map((e) => <li key={cryptoUUID()}>
                         <div className="candidateNameDiv" onClick={() => handdleShowJob()}>
-                            <h2>{e.candidate.name} - {e.job.position}</h2>
+                            <h2>{e.candidate?.name} - {e.job?.position}</h2>
                             <div>
                                 {showJob ? (
                                     <img src={sub} className="subIcon" alt="sub icons" />
@@ -55,8 +54,8 @@ export const AdminPageCandidateList = () => {
                         </div>
                         <div className={showJob ? "descriptionCandidateDiv" : "descriptionCandidateDivNone"}>
                             <h3 className="titleCandidatureDetails">Detalhes da candidatura:</h3>
-                            <p>{e.job.description}</p>
-                            <p>E-mail: <span className="candidateEmail">{e.candidate.email}</span></p>
+                            <p>{e.job?.description}</p>
+                            <p>E-mail: <span className="candidateEmail">{e.candidate?.email}</span></p>
                         </div>
                     </li>) : <div><h1>Nenhum candidato foi cadastrado até o momento</h1></div>}
                 </ul>
