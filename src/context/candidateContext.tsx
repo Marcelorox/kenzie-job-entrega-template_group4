@@ -82,11 +82,6 @@ interface IAdminLoginResponse {
   user: IAdmin;
 }
 
-interface IIsOpen {
-  accessToken: string;
-  user: IAdmin;
-}
-
 interface UserContextProps {
   jobs: Job[] | [];
   navigate: NavigateFunction;
