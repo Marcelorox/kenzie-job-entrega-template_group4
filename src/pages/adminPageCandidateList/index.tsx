@@ -4,6 +4,7 @@ import { StyledContainerAdminCandidateList } from "./style";
 import add from "../../assets/img/addIcons.svg";
 import sub from "../../assets/img/subIcons.svg";
 import { v4 as uuidv4 } from 'uuid';
+import { StyledTitleOne } from "../../style/typography";
 
 
 export const AdminPageCandidateList = () => {
@@ -39,7 +40,7 @@ export const AdminPageCandidateList = () => {
     return (
         <>
             <StyledContainerAdminCandidateList>
-                <h1>Minhas candidaturas</h1>
+                <StyledTitleOne>Minhas candidaturas</StyledTitleOne>
                 <ul>
                     {candidates ? candidatureList.map((e) => <li key={cryptoUUID()}>
                         <div className="candidateNameDiv" onClick={() => handdleShowJob()}>

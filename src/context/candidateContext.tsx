@@ -73,7 +73,7 @@ interface IApplyJob {
   position: string;
   empresa: string;
 }
-interface IAdminLoginResponse {
+ interface IAdminLoginResponse {
   accessToken: string;
   user: IAdmin;
 }
@@ -139,6 +139,7 @@ export const UserContext = createContext<UserContextProps>(
     try {
       await api.post("users", formData);
       toast.success('Cadastrado com sucesso')
+      navigate("entrar")
     } catch (error) {
       toast.error('Ops! algo deu errado')
     }

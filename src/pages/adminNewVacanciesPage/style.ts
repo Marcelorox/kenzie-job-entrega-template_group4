@@ -24,6 +24,15 @@ export const Styledsection = styled.section`
     justify-content: space-between;
     width: 80px;
   }
+  a{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    p{
+      color: var(--blue);
+    }
+  }
   .voltarContainner {
     align-self: center;
     width: 100%;
@@ -35,10 +44,6 @@ export const Styledsection = styled.section`
     padding: 1rem;
   }
   
-  h5 {
-    font-family: var(--Font-primary);
-    color: var(--blue);
-  }
   h1 {
     font-family: var(--Font-primary);
     color: var(--blue);

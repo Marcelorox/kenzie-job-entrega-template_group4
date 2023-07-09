@@ -1,5 +1,5 @@
 import { Footer } from "../../../components/Footer"
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ReturnToVacancies from "../../../assets/img/Return.png"; 
 import { HeaderPrivate } from "../../../components/Header/headerPrivate"
 import { StyledParagraph } from "../../../style/typography";
@@ -8,6 +8,9 @@ import { UpdateForm } from "../../../components/forms/update/UpdateJob";
 
 
 export const UpdateJobs = () => {
+    const params= useParams()
+    console.log(params);
+    
 return(
     <>
         <StyledAllUpdatePage>

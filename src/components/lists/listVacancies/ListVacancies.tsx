@@ -8,7 +8,7 @@ import { CardVacancy } from "./cardVacancy/CardVacancy";
 
 export const ListVacancies = () => {
   const { specificJobs } = useContext(AdminContext);
-  // console.log(specificJobs, "specificJobs");
+  console.log(specificJobs, "specificJobs");
 
   return (
     <StyleContainerVacancies>
@@ -21,14 +21,10 @@ export const ListVacancies = () => {
       </div>
       <div>
         <ul>
-            {/*
-                specificJobs.map((vacancy) => {
-                    console.log(vacancy)
-                    
+            {
+                specificJobs.map((vacancy) => {                    
                     return <CardVacancy key={vacancy.id} vacancy={vacancy} />})
-                */}
-                <CardVacancy />
-                <CardVacancy />
+            }
         </ul>
       </div>
     </StyleContainerVacancies>

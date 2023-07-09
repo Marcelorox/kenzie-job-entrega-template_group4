@@ -1,7 +1,7 @@
 import { HeaderPrivate } from "../../components/Header/headerPrivate";
 import { Footer } from "../../components/Footer";
 import { Input } from "../../components/inputs/Inputs";
-import { TNewVacanciesZod, newVacanciesZod } from "./newVacanciesZod";
+import { TNewVacanciesZod, newVacanciesZod } from "./NewVacanciesZod";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import seta from "../../assets/img/seta.svg";
@@ -11,6 +11,8 @@ import { useContext } from "react";
 import { AdminContext } from "../../context/adminContext";
 import { Styledsection } from "./style";
 import { Link } from "react-router-dom";
+import { StyledParagraph} from "../../style/typography";
+import { StyleAlertSchema } from "../../components/inputs/StyleAlertSchema";
 
 export const AdminNewVacanciesPage = () => {
   const { addJobs } = useContext(AdminContext);
@@ -31,7 +33,7 @@ export const AdminNewVacanciesPage = () => {
   const candidateSubmit: SubmitHandler<TNewVacanciesZod> = async (data) => {
     const cadastro = { ...data, userId: adminIdNumber };
     addJobs(cadastro);
-
+    
     reset();
   };
 
@@ -43,15 +45,15 @@ export const AdminNewVacanciesPage = () => {
           <div className="voltar">
             <Link to={"/dashboard"}>
               <img className="imgSeta" src={seta} alt="seta voltar" />
+            <StyledParagraph>voltar</StyledParagraph>
             </Link>
-            <h5>voltar</h5>
           </div>
         </div>
         <div className="sectionContainner">
           <section className="formSaction">
             <h1>Criar vaga</h1>
             <form onSubmit={handleSubmit(candidateSubmit)}>
-              <Input
+              <Input 
                 className="inputCriarVaga"
                 type="text"
                 placeholder="Cargo"
@@ -65,13 +67,12 @@ export const AdminNewVacanciesPage = () => {
                 error={errors.sallary}
                 {...register("sallary")}
               />
-              <Input
-                className="inputCriarVagaDescrição"
-                type="text"
-                placeholder="Descrição"
-                error={errors.description}
-                {...register("description")}
-              />
+              <textarea                
+               className="inputCriarVagaDescrição"
+               placeholder="Descrição"
+                {...register("description")}>
+                </textarea>
+                <StyleAlertSchema>{errors.description?.message}</StyleAlertSchema>
               <button type="submit" className="buttonCriaVaga">
                 <img src={criar} alt="criar vaga" />
                 <img src={textoCriarVagas} alt=" texto criar vaga" />

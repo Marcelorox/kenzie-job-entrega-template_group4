@@ -55,6 +55,8 @@ interface AdminContextProps {
     candidateList: (companyID: number) => Promise<void>;
     findJobsByCompanyId: (companyID: number) => Promise<void>;
     handleLogout: () => void;
+    modalOpen: boolean;
+    setModalOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const AdminContext = createContext<AdminContextProps>(
@@ -65,6 +67,8 @@ export const AdminProvider = ({ children }: IAdminProviderProps) => {
 
     const [specificJobs, setSpecificJobs] = useState<IAdminJobResponse[] | []>([])
     const [candidates, setCandidates] = useState<IAdminCandidatesResponse[] | []>([])
+    const [modalOpen, setModalOpen] = useState(false)
+    
 
     const navigate = useNavigate()
 
@@ -101,6 +105,7 @@ export const AdminProvider = ({ children }: IAdminProviderProps) => {
         try {
             await api.post<IAdminAddJobsResponse>("jobs", formData, { headers: { Authorization: `Bearer ${token}` } });
             toast.success('Cadastrado de vaga com sucesso')
+            navigate("/dashboard")
         } catch (error) {
             console.log(error);
             toast.error('Ops! algo deu errado')
@@ -118,6 +123,8 @@ export const AdminProvider = ({ children }: IAdminProviderProps) => {
     const deleteJobs = async (jobId: number) => {
         try {
             await api.delete(`jobs/${jobId}`, { headers: { Authorization: `Bearer ${token}` } })
+            toast.success("Vaga deletada com sucesso")
+            setSpecificJobs((jobs) => jobs.filter((job) => job.id !== jobId));
         } catch (error) {
             console.log(error)
         }
@@ -156,7 +163,9 @@ export const AdminProvider = ({ children }: IAdminProviderProps) => {
         updateJobs,
         deleteJobs,
         candidateList,
-        findJobsByCompanyId
+        findJobsByCompanyId,
+        modalOpen,
+        setModalOpen,
     }
 
     return (
