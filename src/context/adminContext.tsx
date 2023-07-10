@@ -15,13 +15,6 @@ interface IAdminAddJobs {
     "description": string,
 }
 
-interface IAdminAddJobsResponse {
-    "userId": number,
-    "position": string,
-    "sallary": number,
-    "description": string,
-}
-
 interface IAdminUpdateJobs {
     "userId": string,
     "position": string,
